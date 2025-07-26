@@ -13,7 +13,7 @@ class ProductController extends Controller
     {
         // Logic to show the form for adding a new product
         $categories = Category::all(); // Assuming you have a Category model
-        return view('adminViews.createProduct', compact('categories'));
+        return view('adminViews.product.createProduct', compact('categories'));
     }
 
     public function storeProduct()
@@ -47,21 +47,22 @@ class ProductController extends Controller
             'image' => $imagePath,
         ]);
 
-        return redirect()->route('product.list')->with('success','Product added successfully');
+        return redirect()->route('product.list')->with('success', 'Product added successfully');
     }
 
-    public function listProducts(){
+    public function listProducts()
+    {
         $products = Product::all();
         //$categories = Category::all();
-        return view('adminViews.listProducts',compact('products'));
+        return view('adminViews.product.listProducts', compact('products'));
     }
-   
+
     public function editProduct($id)
     {
         $product = Product::findOrFail($id);
         $categories = Category::all();
-        return view('adminViews.editProduct', compact('product', 'categories'));
-    }   
+        return view('adminViews.product.editProduct', compact('product', 'categories'));
+    }
 
     public function updateProduct($id)
     {

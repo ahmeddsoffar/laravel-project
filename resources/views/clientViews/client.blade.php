@@ -1,11 +1,10 @@
-
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 
 
 <!-- Mirrored from themesflat.co/html/ecomus/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 08 Sep 2024 08:49:54 GMT -->
+
 <head>
     <meta charset="utf-8">
     <title>Ecomus - Ultimate HTML</title>
@@ -13,17 +12,17 @@
     <meta name="author" content="themesflat.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-   <!-- font -->
-   <link rel="stylesheet" href="{{ asset('clientFront/assets/fonts/fonts.css') }}">
-   <link rel="stylesheet" href="{{ asset('clientFront/assets/fonts/font-icons.css') }}">
-   <link rel="stylesheet" href="{{ asset('clientFront/assets/css/bootstrap.min.css') }}">
-   <link rel="stylesheet" href="{{ asset('clientFront/assets/css/swiper-bundle.min.css') }}">
-   <link rel="stylesheet" href="{{ asset('clientFront/assets/css/animate.css') }}">
-   <link rel="stylesheet"type="text/css" href="{{ asset('clientFront/assets/css/styles.css') }}"/>
+    <!-- font -->
+    <link rel="stylesheet" href="{{ asset('clientFront/assets/fonts/fonts.css') }}">
+    <link rel="stylesheet" href="{{ asset('clientFront/assets/fonts/font-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('clientFront/assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('clientFront/assets/css/swiper-bundle.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('clientFront/assets/css/animate.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('clientFront/assets/css/styles.css') }}" />
 
     <!-- Favicon and Touch Icons  -->
     <link rel="shortcut icon" href="{{ asset('clientFront/assets/images/logo/favicon.png') }}">
-<link rel="apple-touch-icon-precomposed" href="{{ asset('clientFront/assets/images/logo/favicon.png') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('clientFront/assets/images/logo/favicon.png') }}">
 
 </head>
 
@@ -66,7 +65,7 @@
                     <div class="top-bar-language tf-cur justify-content-end">
 
 
-                        
+
                         <div class="tf-languages">
                             <select class="image-select center style-default type-languages">
                                 <option>English</option>
@@ -75,7 +74,7 @@
                                 <option>اردو</option>
                             </select>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -376,11 +375,11 @@
                                                                         <div class="card-product-wrapper">
                                                                             <a href="#" class="product-img">
                                                                                 @if($product->image)
-                                                                                    <img class="lazyload img-product" data-src="{{ asset('storage/' . $product->image) }}" src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
-                                                                                    <img class="lazyload img-hover" data-src="{{ asset('storage/' . $product->image) }}" src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+                                                                                <img class="lazyload img-product" data-src="{{ asset('storage/' . $product->image) }}" src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+                                                                                <img class="lazyload img-hover" data-src="{{ asset('storage/' . $product->image) }}" src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
                                                                                 @else
-                                                                                    <img class="lazyload img-product" data-src="{{ asset('clientFront/assets/images/products/placeholder.jpg') }}" src="{{ asset('clientFront/assets/images/products/placeholder.jpg') }}" alt="{{ $product->name }}">
-                                                                                    <img class="lazyload img-hover" data-src="{{ asset('clientFront/assets/images/products/placeholder.jpg') }}" src="{{ asset('clientFront/assets/images/products/placeholder.jpg') }}" alt="{{ $product->name }}">
+                                                                                <img class="lazyload img-product" data-src="{{ asset('clientFront/assets/images/products/placeholder.jpg') }}" src="{{ asset('clientFront/assets/images/products/placeholder.jpg') }}" alt="{{ $product->name }}">
+                                                                                <img class="lazyload img-hover" data-src="{{ asset('clientFront/assets/images/products/placeholder.jpg') }}" src="{{ asset('clientFront/assets/images/products/placeholder.jpg') }}" alt="{{ $product->name }}">
                                                                                 @endif
                                                                             </a>
                                                                             <div class="list-product-btn absolute-2">
@@ -407,10 +406,10 @@
                                                                         <div class="card-product-info">
                                                                             <a href="#" class="title link">{{ $product->name }}</a>
                                                                             @if($product->discount > 0)
-                                                                                <div class="price-sale">${{ number_format($product->price - ($product->price * $product->discount / 100), 2) }}</div>
-                                                                                <div class="compare-at-price">${{ number_format($product->price, 2) }}</div>
+                                                                            <div class="price-sale">${{ number_format($product->price - ($product->price * $product->discount / 100), 2) }}</div>
+                                                                            <div class="compare-at-price">${{ number_format($product->price, 2) }}</div>
                                                                             @else
-                                                                                <span class="price">${{ number_format($product->price, 2) }}</span>
+                                                                            <span class="price">${{ number_format($product->price, 2) }}</span>
                                                                             @endif
                                                                         </div>
                                                                     </div>
@@ -439,7 +438,7 @@
                                                     <ul class="menu-list">
                                                         <li>
                                                             <a href="brands.html" class="menu-link-text link text_black-2 position-relative">Brands
-                                                                <div class="demo-label"><span class="demo-new">New</span></div> 
+                                                                <div class="demo-label"><span class="demo-new">New</span></div>
                                                             </a>
                                                         </li>
                                                         <li><a href="brands-v2.html" class="menu-link-text link text_black-2">Brand V2</a></li>
@@ -524,37 +523,41 @@
                             <li class="nav-search"><a href="#canvasSearch" data-bs-toggle="offcanvas" aria-controls="offcanvasLeft" class="nav-icon-item"><i class="icon icon-search"></i></a></li>
                             <li class="nav-account">
                                 @auth
-                                    <!-- User Profile Dropdown -->
-                                    <div class="dropdown">
-                                        <a class="nav-icon-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; color: inherit;">
-                                            <i class="icon icon-account me-2"></i>
-                                            <span class="d-none d-md-inline">{{ auth()->user()->name }}</span>
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-menu-end" style="min-width: 200px;">
-                                            <li>
-                                                <div class="dropdown-header">
-                                                    <strong>{{ auth()->user()->name }}</strong>
-                                                    <br>
-                                                    <small class="text-muted">{{ auth()->user()->email }}</small>
-                                                </div>
-                                            </li>
-                                            <li><hr class="dropdown-divider"></li>
-                                            <li><a class="dropdown-item" href="{{ route('profile.edit') }}"><i class="icon icon-account me-2"></i>My Account</a></li>
-                                            @if(auth()->user()->role == 'admin')
-                                                <li><a class="dropdown-item" href="{{ route('adminView') }}"><i class="icon icon-settings me-2"></i>Admin Panel</a></li>
-                                            @endif
-                                            <li><hr class="dropdown-divider"></li>
-                                            <li>
-                                                <form method="POST" action="{{ route('logout') }}" class="d-inline">
-                                                    @csrf
-                                                    <button type="submit" class="dropdown-item text-danger"><i class="icon icon-logout me-2"></i>Logout</button>
-                                                </form>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                <!-- User Profile Dropdown -->
+                                <div class="dropdown">
+                                    <a class="nav-icon-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; color: inherit;">
+                                        <i class="icon icon-account me-2"></i>
+                                        <span class="d-none d-md-inline">{{ auth()->user()->name }}</span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" style="min-width: 200px;">
+                                        <li>
+                                            <div class="dropdown-header">
+                                                <strong>{{ auth()->user()->name }}</strong>
+                                                <br>
+                                                <small class="text-muted">{{ auth()->user()->email }}</small>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="{{ route('profile.edit') }}"><i class="icon icon-account me-2"></i>My Account</a></li>
+                                        @if(auth()->user()->role == 'admin')
+                                        <li><a class="dropdown-item" href="{{ route('adminView') }}"><i class="icon icon-settings me-2"></i>Admin Panel</a></li>
+                                        @endif
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li>
+                                            <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                                                @csrf
+                                                <button type="submit" class="dropdown-item text-danger"><i class="icon icon-logout me-2"></i>Logout</button>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </div>
                                 @else
-                                    <!-- Login Modal Trigger -->
-                                    <a href="#login" data-bs-toggle="modal" class="nav-icon-item"><i class="icon icon-account"></i></a>
+                                <!-- Login Modal Trigger -->
+                                <a href="#login" data-bs-toggle="modal" class="nav-icon-item"><i class="icon icon-account"></i></a>
                                 @endauth
                             </li>
                             <li class="nav-wishlist"><a href="wishlist.html" class="nav-icon-item"><i class="icon icon-heart"></i><span class="count-box">0</span></a></li>
@@ -603,7 +606,7 @@
                                     <a href="shop-default.html" class="fade-item fade-item-3 tf-btn btn-fill animate-hover-btn btn-xl radius-3"><span>Shop collection</span><i class="icon icon-arrow-right"></i></a>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -620,79 +623,99 @@
             <div class="wrap-marquee">
                 <div class="marquee-item">
                     <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20"><path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20">
+                            <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                        </svg>
                     </div>
                     <p class="text">Spring Clearance Event: Save Up to 70%</p>
                 </div>
                 <div class="marquee-item">
                     <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20"><path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20">
+                            <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                        </svg>
                     </div>
                     <p class="text">Spring Clearance Event: Save Up to 70%</p>
                 </div>
                 <div class="marquee-item">
                     <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20"><path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20">
+                            <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                        </svg>
                     </div>
                     <p class="text">Spring Clearance Event: Save Up to 70%</p>
                 </div>
                 <div class="marquee-item">
                     <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20"><path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20">
+                            <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                        </svg>
                     </div>
                     <p class="text">Spring Clearance Event: Save Up to 70%</p>
                 </div>
                 <div class="marquee-item">
                     <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20"><path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20">
+                            <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                        </svg>
                     </div>
                     <p class="text">Spring Clearance Event: Save Up to 70%</p>
                 </div>
                 <div class="marquee-item">
                     <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20"><path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20">
+                            <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                        </svg>
                     </div>
                     <p class="text">Spring Clearance Event: Save Up to 70%</p>
                 </div>
                 <div class="marquee-item">
                     <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20"><path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20">
+                            <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                        </svg>
                     </div>
                     <p class="text">Spring Clearance Event: Save Up to 70%</p>
                 </div>
                 <div class="marquee-item">
                     <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20"><path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20">
+                            <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                        </svg>
                     </div>
                     <p class="text">Spring Clearance Event: Save Up to 70%</p>
                 </div>
                 <div class="marquee-item">
                     <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20"><path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20">
+                            <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                        </svg>
                     </div>
                     <p class="text">Spring Clearance Event: Save Up to 70%</p>
                 </div>
                 <div class="marquee-item">
                     <div class="icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20"><path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="" width="15" height="20" viewBox="0 0 15 20">
+                            <path d="M14.5833 8H8.61742L9.94318 0L0 12H5.96591L4.64015 20L14.5833 8"></path>
+                        </svg>
                     </div>
                     <p class="text">Spring Clearance Event: Save Up to 70%</p>
                 </div>
             </div>
-                      
+
         </div>
         <!-- /Marquee -->
         <!-- Categories -->
         <section class="flat-spacing-4 flat-categorie">
             <div class="container-full">
-               <div class="flat-title-v2">
+                <div class="flat-title-v2">
                     <div class="box-sw-navigation">
                         <div class="nav-sw nav-next-slider nav-next-collection"><span class="icon icon-arrow-left"></span></div>
                         <div class="nav-sw nav-prev-slider nav-prev-collection"><span class="icon icon-arrow-right"></span></div>
                     </div>
                     <span class="text-3 fw-7 text-uppercase title wow fadeInUp" data-wow-delay="0s">SHOP BY CATEGORIES</span>
-               </div>
-               <div class="row">
+                </div>
+                <div class="row">
                     <div class="col-xl-9 col-lg-8 col-md-8">
                         <div class="swiper tf-sw-collection" data-preview="3" data-tablet="2" data-mobile="2" data-space-lg="30" data-space-md="30" data-space="15" data-loop="false" data-auto-play="false">
                             <div class="swiper-wrapper">
@@ -765,8 +788,8 @@
                             <a href="shop-collection-list.html"><i class="icon-arrow1-top-left"></i></a>
                         </div>
                     </div>
-               </div>
-               
+                </div>
+
             </div>
         </section>
         <!-- /Categories -->
@@ -779,17 +802,17 @@
                 </div>
                 <div class="grid-layout loadmore-item wow fadeInUp" data-wow-delay="0s" data-grid="grid-4">
                     @forelse($products as $index => $product) <!-- for else de k2nha for each we if m3a ba3d leeh 34an mm3ml4 condtion m5soos lw mfee4 wla produt-->
-                        <!-- Dynamic Product Card -->
+                    <!-- Dynamic Product Card -->
                     <div class="card-product fl-item">
                         <div class="card-product-wrapper">
                             <a href="product-detail.html" class="product-img">
-                                    @if($product->image)
-                                        <img class="lazyload img-product" data-src="{{ asset('storage/' . $product->image) }}" src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
-                                        <img class="lazyload img-hover" data-src="{{ asset('storage/' . $product->image) }}" src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
-                                    @else
-                                        <img class="lazyload img-product" data-src="{{ asset('clientFront/assets/images/products/albert-black.jpg') }}" src="{{ asset('clientFront/assets/images/products/albert-black.jpg') }}" alt="{{ $product->name }}"> <!-- default image -->
-                                        <img class="lazyload img-hover" data-src="{{ asset('clientFront/assets/images/products/albert-black.jpg') }}" src="{{ asset('clientFront/assets/images/products/albert-black.jpg') }}" alt="{{ $product->name }}"> <!-- default image ana m5trha -->
-                                    @endif
+                                @if($product->image)
+                                <img class="lazyload img-product" data-src="{{ asset('storage/' . $product->image) }}" src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+                                <img class="lazyload img-hover" data-src="{{ asset('storage/' . $product->image) }}" src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}">
+                                @else
+                                <img class="lazyload img-product" data-src="{{ asset('clientFront/assets/images/products/albert-black.jpg') }}" src="{{ asset('clientFront/assets/images/products/albert-black.jpg') }}" alt="{{ $product->name }}"> <!-- default image -->
+                                <img class="lazyload img-hover" data-src="{{ asset('clientFront/assets/images/products/albert-black.jpg') }}" src="{{ asset('clientFront/assets/images/products/albert-black.jpg') }}" alt="{{ $product->name }}"> <!-- default image ana m5trha -->
+                                @endif
                             </a>
                             <div class="list-product-btn">
                                 <a href="#quick_add" data-bs-toggle="modal" class="box-icon bg_white quick-add tf-btn-loading">
@@ -817,586 +840,585 @@
                                 <span>L</span>
                                 <span>XL</span>
                             </div>
-                                @if($product->discount > 0)
-                                    <div class="on-sale-wrap text-end">
-                                        <div class="on-sale-item">{{ $product->discount }}%</div>
-                        </div>
-                                @endif
+                            @if($product->discount > 0)
+                            <div class="on-sale-wrap text-end">
+                                <div class="on-sale-item">{{ $product->discount }}%</div>
+                            </div>
+                            @endif
                         </div>
                         <div class="card-product-info">
-                                <a href="product-detail.html" class="title link">{{ $product->name }}</a>
-                                <div class="price-wrap">
-                                    @if($product->discount > 0)
-                                        <div class="price-sale">${{ number_format($product->price - ($product->price * $product->discount / 100), 2) }}</div>
-                                        <div class="compare-at-price">${{ number_format($product->price, 2) }}</div>
-                                    @else
-                                        <span class="price">${{ number_format($product->price, 2) }}</span>
-                                    @endif
-                        </div>
-                                <div class="product-info-bottom">
-                                    <p class="category">{{ $product->category ? $product->category->name : 'Uncategorized' }}</p>
-                                    <p class="stock">{{ $product->quantity > 0 ? 'In Stock (' . $product->quantity . ')' : 'Out of Stock' }}</p>
-                                </div>
+                            <a href="product-detail.html" class="title link">{{ $product->name }}</a>
+                            <div class="price-wrap">
+                                @if($product->discount > 0)
+                                <div class="price-sale">${{ number_format($product->price - ($product->price * $product->discount / 100), 2) }}</div>
+                                <div class="compare-at-price">${{ number_format($product->price, 2) }}</div>
+                                @else
+                                <span class="price">${{ number_format($product->price, 2) }}</span>
+                                @endif
+                            </div>
+                            <div class="product-info-bottom">
+                                <p class="category">{{ $product->category ? $product->category->name : 'Uncategorized' }}</p>
+                                <p class="stock">{{ $product->quantity > 0 ? 'In Stock (' . $product->quantity . ')' : 'Out of Stock' }}</p>
                             </div>
                         </div>
-                        <!--da b2a el by7sel lw mfee4 products-->
-                    @empty 
-                        <div class="col-12">
-                            <div class="text-center py-5">
-                                <div class="mb-4">
-                                    <i class="icon-bag" style="font-size: 4rem; color: #6c757d;"></i>
-                        </div>
-                                <h5 class="text-muted mb-3">No products found</h5>
-                                <p class="text-muted">Check back later for new arrivals and amazing deals!</p>
                     </div>
+                    <!--da b2a el by7sel lw mfee4 products-->
+                    @empty
+                    <div class="col-12">
+                        <div class="text-center py-5">
+                            <div class="mb-4">
+                                <i class="icon-bag" style="font-size: 4rem; color: #6c757d;"></i>
                             </div>
+                            <h5 class="text-muted mb-3">No products found</h5>
+                            <p class="text-muted">Check back later for new arrivals and amazing deals!</p>
+                        </div>
+                    </div>
                     @endforelse
-                    </div>
-                </div>
-                <div class="tf-pagination-wrap view-more-button text-center">
-                    <button class="tf-btn-loading tf-loading-default style-2 btn-loadmore "><span class="text">Load more</span></button>
                 </div>
             </div>
-        </section>
-        <!-- /Seller -->
-        <!-- Lookbook -->
-        <section class="flat-spacing-6">
+            <div class="tf-pagination-wrap view-more-button text-center">
+                <button class="tf-btn-loading tf-loading-default style-2 btn-loadmore "><span class="text">Load more</span></button>
+            </div>
+    </div>
+    </section>
+    <!-- /Seller -->
+    <!-- Lookbook -->
+    <section class="flat-spacing-6">
+        <div class="flat-title wow fadeInUp" data-wow-delay="0s">
+            <span class="title">Shop the look</span>
+            <p class="sub-title">Inspire and let yourself be inspired, from one unique fashion to another.</p>
+        </div>
+        <div class="swiper tf-sw-lookbook" data-preview="2" data-tablet="2" data-mobile="1" data-space-lg="0" data-space-md="0">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" lazy="true">
+                    <div class="wrap-lookbook lookbook-1">
+                        <div class="image">
+                            <img class="lazyload" data-src="{{ asset('clientFront/assets/images/shop/file/lookbook-3.jpg') }}" src="{{ asset('clientFront/assets/images/shop/file/lookbook-3.jpg') }}" alt="image-lookbook">
+                        </div>
+                        <div class="lookbook-item item-1">
+                            <div class="inner">
+                                <div class="btn-group dropdown dropup dropdown-center">
+                                    <button class="tf-pin-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span></span>
+                                    </button>
+                                    <ul class="dropdown-menu p-0 border-0">
+                                        <li>
+                                            <div class="lookbook-product">
+                                                <a href="product-detail.html" class="image">
+                                                    <img class="lazyload" data-src="{{ asset('clientFront/assets/images/shop/products/img-p2.png') }}" src="{{ asset('clientFront/assets/images/shop/products/img-p2.png') }}   " alt="lookbook-item">
+                                                </a>
+                                                <div class="content-wrap">
+                                                    <div class="product-title">
+                                                        <a href="#">Jersey thong body</a>
+                                                    </div>
+                                                    <div class="price">$112.00</div>
+                                                </div>
+                                                <a href="#quick_view" data-bs-toggle="modal" class=""><i class="icon-view"></i></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lookbook-item item-2">
+                            <div class="inner">
+                                <div class="btn-group dropdown dropup dropdown-center">
+                                    <button class="tf-pin-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span></span>
+                                    </button>
+                                    <ul class="dropdown-menu p-0 border-0">
+                                        <li>
+                                            <div class="lookbook-product">
+                                                <a href="product-detail.html" class="image">
+                                                    <img class="lazyload" data-src="{{ asset('clientFront/assets/images/shop/products/img-p4.png') }}" src="{{ asset('clientFront/assets/images/shop/products/img-p4.png') }}" alt="">
+                                                </a>
+                                                <div class="content-wrap">
+                                                    <div class="product-title">
+                                                        <a href="#">Ribbed modal T-shirt</a>
+                                                    </div>
+                                                    <div class="price">$20.00</div>
+                                                </div>
+                                                <a href="#quick_view" data-bs-toggle="modal" class=""><i class="icon-view"></i></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" lazy="true">
+                    <div class="wrap-lookbook lookbook-2">
+                        <div class="image">
+                            <img class="lazyload" data-src="{{ asset('clientFront/assets/images/shop/file/lookbook-4.jpg') }}" src="{{ asset('clientFront/assets/images/shop/file/lookbook-4.jpg') }}" alt="image-lookbook">
+                        </div>
+                        <div class="lookbook-item item-1">
+                            <div class="inner">
+                                <div class="btn-group dropdown dropup dropdown-center">
+                                    <button class="tf-pin-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span></span>
+                                    </button>
+                                    <ul class="dropdown-menu p-0 border-0">
+                                        <li>
+                                            <div class="lookbook-product">
+                                                <a href="product-detail.html" class="image">
+                                                    <img class="lazyload" data-src="{{ asset('clientFront/assets/images/shop/products/img-p5.png') }}" src="{{ asset('clientFront/assets/images/shop/products/img-p5.png') }}" alt="">
+                                                </a>
+                                                <div class="content-wrap">
+                                                    <div class="product-title">
+                                                        <a href="#">Ribbed Tank Top</a>
+                                                    </div>
+                                                    <div class="price">$20.00</div>
+                                                </div>
+                                                <a href="#quick_view" data-bs-toggle="modal" class=""><i class="icon-view"></i></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap-pagination">
+                <div class="container-full">
+                    <div class="sw-dots sw-pagination-lookbook justify-content-center"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /Lookbook -->
+    <!-- Testimonial -->
+    <section class="flat-spacing-5 pt_0 flat-testimonial">
+        <div class="container">
             <div class="flat-title wow fadeInUp" data-wow-delay="0s">
-                <span class="title">Shop the look</span>
-                <p class="sub-title">Inspire and let yourself be inspired, from one unique fashion to another.</p>
+                <span class="title">Happy Clients</span>
+                <p class="sub-title">Hear what they say about us</p>
             </div>
-            <div class="swiper tf-sw-lookbook" data-preview="2" data-tablet="2" data-mobile="1" data-space-lg="0" data-space-md="0">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" lazy="true">
-                        <div class="wrap-lookbook lookbook-1">
-                            <div class="image">
-                                <img class="lazyload" data-src="{{ asset('clientFront/assets/images/shop/file/lookbook-3.jpg') }}" src="{{ asset('clientFront/assets/images/shop/file/lookbook-3.jpg') }}" alt="image-lookbook">
-                            </div>
-                            <div class="lookbook-item item-1">
-                                <div class="inner">
-                                    <div class="btn-group dropdown dropup dropdown-center">
-                                        <button class="tf-pin-btn" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span></span>
-                                        </button>
-                                        <ul class="dropdown-menu p-0 border-0">
-                                            <li>
-                                                <div class="lookbook-product">
-                                                    <a href="product-detail.html" class="image">
-                                                        <img class="lazyload" data-src="{{ asset('clientFront/assets/images/shop/products/img-p2.png') }}" src="{{ asset('clientFront/assets/images/shop/products/img-p2.png') }}   " alt="lookbook-item">
-                                                    </a>
-                                                    <div class="content-wrap">
-                                                        <div class="product-title">
-                                                            <a href="#">Jersey thong body</a>
-                                                        </div>
-                                                        <div class="price">$112.00</div>
-                                                    </div>
-                                                    <a href="#quick_view" data-bs-toggle="modal" class=""><i class="icon-view"></i></a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="lookbook-item item-2">
-                                <div class="inner">
-                                    <div class="btn-group dropdown dropup dropdown-center">
-                                        <button class="tf-pin-btn" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span></span>
-                                        </button>
-                                        <ul class="dropdown-menu p-0 border-0">
-                                            <li>
-                                                <div class="lookbook-product">
-                                                    <a href="product-detail.html" class="image">
-                                                        <img class="lazyload" data-src="{{ asset('clientFront/assets/images/shop/products/img-p4.png') }}" src="{{ asset('clientFront/assets/images/shop/products/img-p4.png') }}" alt="">
-                                                    </a>
-                                                    <div class="content-wrap">
-                                                        <div class="product-title">
-                                                            <a href="#">Ribbed modal T-shirt</a>
-                                                        </div>
-                                                        <div class="price">$20.00</div>
-                                                    </div>
-                                                    <a href="#quick_view" data-bs-toggle="modal" class=""><i class="icon-view"></i></a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide" lazy="true">
-                        <div class="wrap-lookbook lookbook-2">
-                            <div class="image">
-                                <img class="lazyload" data-src="{{ asset('clientFront/assets/images/shop/file/lookbook-4.jpg') }}" src="{{ asset('clientFront/assets/images/shop/file/lookbook-4.jpg') }}" alt="image-lookbook">
-                            </div>
-                            <div class="lookbook-item item-1">
-                                <div class="inner">
-                                    <div class="btn-group dropdown dropup dropdown-center">
-                                        <button class="tf-pin-btn" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span></span>
-                                        </button>
-                                        <ul class="dropdown-menu p-0 border-0">
-                                            <li>
-                                                <div class="lookbook-product">
-                                                    <a href="product-detail.html" class="image">
-                                                        <img class="lazyload" data-src="{{ asset('clientFront/assets/images/shop/products/img-p5.png') }}" src="{{ asset('clientFront/assets/images/shop/products/img-p5.png') }}" alt="">
-                                                    </a>
-                                                    <div class="content-wrap">
-                                                        <div class="product-title">
-                                                            <a href="#">Ribbed Tank Top</a>
-                                                        </div>
-                                                        <div class="price">$20.00</div>
-                                                    </div>
-                                                    <a href="#quick_view" data-bs-toggle="modal" class=""><i class="icon-view"></i></a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="wrap-pagination">
-                    <div class="container-full">
-                        <div class="sw-dots sw-pagination-lookbook justify-content-center"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- /Lookbook -->
-        <!-- Testimonial -->
-        <section class="flat-spacing-5 pt_0 flat-testimonial">
-            <div class="container">
-                <div class="flat-title wow fadeInUp" data-wow-delay="0s">
-                    <span class="title">Happy Clients</span>
-                    <p class="sub-title">Hear what they say about us</p>
-                </div>
-                <div class="wrap-carousel">
-                    <div class="swiper tf-sw-testimonial" data-preview="3" data-tablet="2" data-mobile="1" data-space-lg="30" data-space-md="15">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="testimonial-item style-column wow fadeInUp" data-wow-delay="0s">
-                                    <div class="rating">
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                    </div>
-                                    <div class="heading">Best Online Fashion Site</div>
-                                    <div class="text">
-                                        “ I always find something stylish and affordable on this web fashion site ”
-                                    </div>
-                                    <div class="author">
-                                        <div class="name">Robert smith</div>
-                                        <div class="metas">Customer from USA</div>
-                                    </div>
-                                    <div class="product">
-                                        <div class="image">
-                                            <a href="product-detail.html">
-                                                <img class="lazyload" data-src="{{ asset('clientFront/assets/images/shop/products/img-p2.png') }}" src="{{ asset('clientFront/assets/images/shop/products/img-p2.png') }}   " alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content-wrap">
-                                            <div class="product-title">
-                                                <a href="product-detail.html">Jersey thong body</a>
-                                            </div>
-                                            <div class="price">$105.95</div>
-                                        </div>
-                                        <a href="product-detail.html" class=""><i class="icon-arrow1-top-left"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="testimonial-item style-column wow fadeInUp" data-wow-delay=".1s">
-                                    <div class="rating">
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                    </div>
-                                    <div class="heading">Great Selection and Quality</div>
-                                    <div class="text">
-                                        "I love the variety of styles and the high-quality clothing on this web fashion site."
-                                    </div>
-                                    <div class="author">
-                                        <div class="name">Allen Lyn</div>
-                                        <div class="metas">Customer from France</span></div>
-                                    </div>
-                                    <div class="product">
-                                        <div class="image">
-                                            <a href="product-detail.html">
-                                                <img class="lazyload" data-src="{{ asset('clientFront/assets/images/shop/products/img-p3.png') }}" src="{{ asset('clientFront/assets/images/shop/products/img-p3.png') }}" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content-wrap">
-                                            <div class="product-title">
-                                                <a href="product-detail.html">Cotton jersey top</a>
-                                            </div>
-                                            <div class="price">$7.95</div>
-                                        </div>
-                                        <a href="product-detail.html" class=""><i class="icon-arrow1-top-left"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="testimonial-item style-column wow fadeInUp" data-wow-delay=".2s">
-                                    <div class="rating">
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                    </div>
-                                    <div class="heading">Best Customer Service</div>
-                                    <div class="text">
-                                        "I finally found a web fashion site with stylish and flattering options in my size."
-                                    </div>
-                                    <div class="author">
-                                        <div class="name">Peter Rope</div>
-                                        <div class="metas">Customer from USA</div>
-                                    </div>
-                                    <div class="product">
-                                        <div class="image">
-                                            <a href="product-detail.html">
-                                                <img class="lazyload" data-src="{{ asset('clientFront/assets/images/shop/products/img-p4.png') }}" src="{{ asset('clientFront/assets/images/shop/products/img-p4.png') }}" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content-wrap">
-                                            <div class="product-title">
-                                                <a href="product-detail.html">Ribbed modal T-shirt</a>
-                                            </div>
-                                            <div class="price">From $18.95</div>
-                                        </div>
-                                        <a href="product-detail.html" class=""><i class="icon-arrow1-top-left"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="testimonial-item style-column wow fadeInUp" data-wow-delay=".3s">
-                                    <div class="rating">
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                        <i class="icon-start"></i>
-                                    </div>
-                                    <div class="heading">Great Selection and Quality</div>
-                                    <div class="text">
-                                        "I love the variety of styles and the high-quality clothing on this web fashion site."
-                                    </div>
-                                    <div class="author">
-                                        <div class="name">Hellen Ase</div>
-                                        <div class="metas">Customer from Japan</span></div>
-                                    </div>
-                                    <div class="product">
-                                        <div class="image">
-                                            <a href="product-detail.html">
-                                                <img class="lazyload" data-src="{{ asset('clientFront/assets/images/shop/products/img-p5.png') }}" src="{{ asset('clientFront/assets/images/shop/products/img-p5.png') }}" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="content-wrap">
-                                            <div class="product-title">
-                                                <a href="product-detail.html">Customer from Japan</a>
-                                            </div>
-                                            <div class="price">$16.95</div>
-                                        </div>
-                                        <a href="product-detail.html" class=""><i class="icon-arrow1-top-left"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="nav-sw nav-next-slider nav-next-testimonial lg"><span class="icon icon-arrow-left"></span></div>
-                    <div class="nav-sw nav-prev-slider nav-prev-testimonial lg"><span class="icon icon-arrow-right"></span></div>
-                    <div class="sw-dots style-2 sw-pagination-testimonial justify-content-center"></div>
-                </div>
-            </div>
-        </section>
-        <!-- /Testimonial -->
-        <!-- brand -->
-        <section class="flat-spacing-5 pt_0">
-            <div class="container">
-                <div class="swiper tf-sw-brand" data-loop="false" data-play="false" data-preview="6" data-tablet="3" data-mobile="2" data-space-lg="0" data-space-md="0">
+            <div class="wrap-carousel">
+                <div class="swiper tf-sw-testimonial" data-preview="3" data-tablet="2" data-mobile="1" data-space-lg="30" data-space-md="15">
                     <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="brand-item">
-                                    <img class="lazyload" data-src="{{ asset('clientFront/assets/images/brand/brand-01.png') }}" src="{{ asset('clientFront/assets/images/brand/brand-01.png') }}" alt="image-brand">
+                        <div class="swiper-slide">
+                            <div class="testimonial-item style-column wow fadeInUp" data-wow-delay="0s">
+                                <div class="rating">
+                                    <i class="icon-start"></i>
+                                    <i class="icon-start"></i>
+                                    <i class="icon-start"></i>
+                                    <i class="icon-start"></i>
+                                    <i class="icon-start"></i>
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-item">
-                                    <img class="lazyload" data-src="{{ asset('clientFront/assets/images/brand/brand-02.png') }}" src="{{ asset('clientFront/assets/images/brand/brand-02.png') }}" alt="image-brand">
+                                <div class="heading">Best Online Fashion Site</div>
+                                <div class="text">
+                                    “ I always find something stylish and affordable on this web fashion site ”
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-item">
-                                    <img class="lazyload" data-src="{{ asset('clientFront/assets/images/brand/brand-03.png') }}" src="{{ asset('clientFront/assets/images/brand/brand-03.png') }}" alt="image-brand">
+                                <div class="author">
+                                    <div class="name">Robert smith</div>
+                                    <div class="metas">Customer from USA</div>
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-item">
-                                    <img class="lazyload" data-src="{{ asset('clientFront/assets/images/brand/brand-04.png') }}" src="{{ asset('clientFront/assets/images/brand/brand-04.png') }}   " alt="image-brand">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-item">
-                                    <img class="lazyload" data-src="{{ asset('clientFront/assets/images/brand/brand-05.png') }}" src="{{ asset('clientFront/assets/images/brand/brand-05.png') }}" alt="image-brand">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="brand-item">
-                                    <img class="lazyload" data-src="{{ asset('clientFront/assets/images/brand/brand-06.png') }}" src="{{ asset('clientFront/assets/images/brand/brand-06.png') }}" alt="image-brand">
-                                </div>
-                            </div>
-                    </div>
-                </div>
-                <div class="sw-dots style-2 sw-pagination-brand justify-content-center"></div>
-            </div>
-        </section>
-        <!-- /brand -->
-        <!-- Shop Gram -->
-        <section class="flat-spacing-7">
-            <div class="container">
-                <div class="flat-title wow fadeInUp" data-wow-delay="0s">
-                    <span class="title">Shop Gram</span>
-                    <p class="sub-title">Inspire and let yourself be inspired, from one unique fashion to another.</p>
-                </div>
-                <div class="wrap-carousel wrap-shop-gram">
-                    <div class="swiper tf-sw-shop-gallery" data-preview="5" data-tablet="3" data-mobile="2" data-space-lg="7" data-space-md="7">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="gallery-item hover-img wow fadeInUp" data-wow-delay=".2s">
-                                    <div class="img-style">
-                                        <img class="lazyload img-hover" data-src="{{ asset('clientFront/assets/images/shop/gallery/gallery-7.jpg') }}" src="{{ asset('clientFront/assets/images/shop/gallery/gallery-7.jpg') }}" alt="image-gallery">
-                                    </div>
-                                    <a href="#quick_add" data-bs-toggle="modal" class="box-icon"><span class="icon icon-bag"></span> <span class="tooltip">Quick Add</span></a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="gallery-item hover-img wow fadeInUp" data-wow-delay=".3s">
-                                    <div class="img-style">
-                                        <img class="lazyload img-hover" data-src="{{ asset('clientFront/assets/images/shop/gallery/gallery-3.jpg') }}" src="{{ asset('clientFront/assets/images/shop/gallery/gallery-3.jpg') }}" alt="image-gallery">
-                                    </div>
-                                    <a href="#quick_add" data-bs-toggle="modal" class="box-icon"><span class="icon icon-bag"></span> <span class="tooltip">Quick Add</span></a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="gallery-item hover-img wow fadeInUp" data-wow-delay=".4s">
-                                    <div class="img-style">
-                                        <img class="lazyload img-hover" data-src="{{ asset('clientFront/assets/images/shop/gallery/gallery-5.jpg') }}" src="{{ asset('clientFront/assets/images/shop/gallery/gallery-5.jpg') }}" alt="image-gallery">
-                                    </div>
-                                    <a href="#quick_add" data-bs-toggle="modal" class="box-icon"><span class="icon icon-bag"></span> <span class="tooltip">Quick Add</span></a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="gallery-item hover-img wow fadeInUp" data-wow-delay=".5s">
-                                    <div class="img-style">
-                                        <img class="lazyload img-hover" data-src="{{ asset('clientFront/assets/images/shop/gallery/gallery-8.jpg') }}" src="{{ asset('clientFront/assets/images/shop/gallery/gallery-8.jpg') }}" alt="image-gallery">
-                                    </div>
-                                    <a href="product-detail.html" class="box-icon"><span class="icon icon-bag"></span> <span class="tooltip">View product</span></a>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="gallery-item hover-img wow fadeInUp" data-wow-delay=".6s">
-                                    <div class="img-style">
-                                        <img class="lazyload img-hover" data-src="{{ asset('clientFront/assets/images/shop/gallery/gallery-6.jpg') }}" src="{{ asset('clientFront/assets/images/shop/gallery/gallery-6.jpg') }}" alt="image-gallery">
-                                    </div>
-                                    <a href="product-detail.html" class="box-icon"><span class="icon icon-bag"></span> <span class="tooltip">View product</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sw-dots sw-pagination-gallery justify-content-center"></div>
-                </div>
-            </div>
-        </section>
-        <!-- /Shop Gram -->
-        <!-- Icon box -->
-        <section class="flat-spacing-7 flat-iconbox wow fadeInUp" data-wow-delay="0s">
-            <div class="container">
-                <div class="wrap-carousel wrap-mobile">
-                    <div class="swiper tf-sw-mobile" data-preview="1" data-space="15">
-                        <div class="swiper-wrapper wrap-iconbox">
-                            <div class="swiper-slide">
-                                <div class="tf-icon-box style-border-line text-center">
-                                    <div class="icon">
-                                        <i class="icon-shipping"></i>
-                                    </div>
-                                    <div class="content">
-                                        <div class="title">Free Shipping</div>
-                                        <p>Free shipping over order $120</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="tf-icon-box style-border-line text-center">
-                                    <div class="icon">
-                                        <i class="icon-payment fs-22"></i>
-                                    </div>
-                                    <div class="content">
-                                        <div class="title">Flexible Payment</div>
-                                        <p>Pay with Multiple Credit Cards</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="tf-icon-box style-border-line text-center">
-                                    <div class="icon">
-                                        <i class="icon-return fs-22"></i>
-                                    </div>
-                                    <div class="content">
-                                        <div class="title">14 Day Returns</div>
-                                        <p>Within 30 days for an exchange</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="tf-icon-box style-border-line text-center">
-                                    <div class="icon">
-                                        <i class="icon-suport"></i>
-                                    </div>
-                                    <div class="content">
-                                        <div class="title">Premium Support</div>
-                                        <p>Outstanding premium support</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-    
-                    </div>
-                    <div class="sw-dots style-2 sw-pagination-mb justify-content-center"></div>
-                </div>
-            </div>
-        </section>
-        <!-- /Icon box -->
-        <!-- Footer -->
-        <footer id="footer" class="footer md-pb-70">
-            <div class="footer-wrap">
-                <div class="footer-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6 col-12">
-                                <div class="footer-infor">
-                                    <div class="footer-logo">
-                                        <a href="index.html">
-                                            <img src="{{ asset('clientFront/assets/images/logo/logo.svg') }}    " alt="">
+                                <div class="product">
+                                    <div class="image">
+                                        <a href="product-detail.html">
+                                            <img class="lazyload" data-src="{{ asset('clientFront/assets/images/shop/products/img-p2.png') }}" src="{{ asset('clientFront/assets/images/shop/products/img-p2.png') }}   " alt="">
                                         </a>
                                     </div>
-                                    <ul>
-                                        <li>
-                                            <p>Address: 1234 Fashion Street, Suite 567, <br> New York, NY 10001</p>
-                                        </li>
-                                        <li>
-                                            <p>Email: <a href="#">info@fashionshop.com</a></p>
-                                        </li>
-                                        <li>
-                                            <p>Phone: <a href="#">(212) 555-1234</a></p>
-                                        </li>
-                                    </ul>
-                                    <a href="contact-1.html" class="tf-btn btn-line">Get direction<i class="icon icon-arrow1-top-left"></i></a>
-                                    <ul class="tf-social-icon d-flex gap-10">
-                                        <li><a href="#" class="box-icon w_34 round social-facebook social-line"><i class="icon fs-14 icon-fb"></i></a></li>
-                                        <li><a href="#" class="box-icon w_34 round social-twiter social-line"><i class="icon fs-12 icon-Icon-x"></i></a></li>
-                                        <li><a href="#" class="box-icon w_34 round social-instagram social-line"><i class="icon fs-14 icon-instagram"></i></a></li>
-                                        <li><a href="#" class="box-icon w_34 round social-tiktok social-line"><i class="icon fs-14 icon-tiktok"></i></a></li>
-                                        <li><a href="#" class="box-icon w_34 round social-pinterest social-line"><i class="icon fs-14 icon-pinterest-1"></i></a></li>
-                                    </ul>
+                                    <div class="content-wrap">
+                                        <div class="product-title">
+                                            <a href="product-detail.html">Jersey thong body</a>
+                                        </div>
+                                        <div class="price">$105.95</div>
+                                    </div>
+                                    <a href="product-detail.html" class=""><i class="icon-arrow1-top-left"></i></a>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6 col-12 footer-col-block">
-                                <div class="footer-heading footer-heading-desktop">
-                                    <h6>Help</h6>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-item style-column wow fadeInUp" data-wow-delay=".1s">
+                                <div class="rating">
+                                    <i class="icon-start"></i>
+                                    <i class="icon-start"></i>
+                                    <i class="icon-start"></i>
+                                    <i class="icon-start"></i>
+                                    <i class="icon-start"></i>
                                 </div>
-                                <div class="footer-heading footer-heading-moblie">
-                                    <h6>Help</h6>
+                                <div class="heading">Great Selection and Quality</div>
+                                <div class="text">
+                                    "I love the variety of styles and the high-quality clothing on this web fashion site."
                                 </div>
-                                <ul class="footer-menu-list tf-collapse-content">
+                                <div class="author">
+                                    <div class="name">Allen Lyn</div>
+                                    <div class="metas">Customer from France</span></div>
+                                </div>
+                                <div class="product">
+                                    <div class="image">
+                                        <a href="product-detail.html">
+                                            <img class="lazyload" data-src="{{ asset('clientFront/assets/images/shop/products/img-p3.png') }}" src="{{ asset('clientFront/assets/images/shop/products/img-p3.png') }}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="content-wrap">
+                                        <div class="product-title">
+                                            <a href="product-detail.html">Cotton jersey top</a>
+                                        </div>
+                                        <div class="price">$7.95</div>
+                                    </div>
+                                    <a href="product-detail.html" class=""><i class="icon-arrow1-top-left"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-item style-column wow fadeInUp" data-wow-delay=".2s">
+                                <div class="rating">
+                                    <i class="icon-start"></i>
+                                    <i class="icon-start"></i>
+                                    <i class="icon-start"></i>
+                                    <i class="icon-start"></i>
+                                    <i class="icon-start"></i>
+                                </div>
+                                <div class="heading">Best Customer Service</div>
+                                <div class="text">
+                                    "I finally found a web fashion site with stylish and flattering options in my size."
+                                </div>
+                                <div class="author">
+                                    <div class="name">Peter Rope</div>
+                                    <div class="metas">Customer from USA</div>
+                                </div>
+                                <div class="product">
+                                    <div class="image">
+                                        <a href="product-detail.html">
+                                            <img class="lazyload" data-src="{{ asset('clientFront/assets/images/shop/products/img-p4.png') }}" src="{{ asset('clientFront/assets/images/shop/products/img-p4.png') }}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="content-wrap">
+                                        <div class="product-title">
+                                            <a href="product-detail.html">Ribbed modal T-shirt</a>
+                                        </div>
+                                        <div class="price">From $18.95</div>
+                                    </div>
+                                    <a href="product-detail.html" class=""><i class="icon-arrow1-top-left"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-item style-column wow fadeInUp" data-wow-delay=".3s">
+                                <div class="rating">
+                                    <i class="icon-start"></i>
+                                    <i class="icon-start"></i>
+                                    <i class="icon-start"></i>
+                                    <i class="icon-start"></i>
+                                    <i class="icon-start"></i>
+                                </div>
+                                <div class="heading">Great Selection and Quality</div>
+                                <div class="text">
+                                    "I love the variety of styles and the high-quality clothing on this web fashion site."
+                                </div>
+                                <div class="author">
+                                    <div class="name">Hellen Ase</div>
+                                    <div class="metas">Customer from Japan</span></div>
+                                </div>
+                                <div class="product">
+                                    <div class="image">
+                                        <a href="product-detail.html">
+                                            <img class="lazyload" data-src="{{ asset('clientFront/assets/images/shop/products/img-p5.png') }}" src="{{ asset('clientFront/assets/images/shop/products/img-p5.png') }}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="content-wrap">
+                                        <div class="product-title">
+                                            <a href="product-detail.html">Customer from Japan</a>
+                                        </div>
+                                        <div class="price">$16.95</div>
+                                    </div>
+                                    <a href="product-detail.html" class=""><i class="icon-arrow1-top-left"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-sw nav-next-slider nav-next-testimonial lg"><span class="icon icon-arrow-left"></span></div>
+                <div class="nav-sw nav-prev-slider nav-prev-testimonial lg"><span class="icon icon-arrow-right"></span></div>
+                <div class="sw-dots style-2 sw-pagination-testimonial justify-content-center"></div>
+            </div>
+        </div>
+    </section>
+    <!-- /Testimonial -->
+    <!-- brand -->
+    <section class="flat-spacing-5 pt_0">
+        <div class="container">
+            <div class="swiper tf-sw-brand" data-loop="false" data-play="false" data-preview="6" data-tablet="3" data-mobile="2" data-space-lg="0" data-space-md="0">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="brand-item">
+                            <img class="lazyload" data-src="{{ asset('clientFront/assets/images/brand/brand-01.png') }}" src="{{ asset('clientFront/assets/images/brand/brand-01.png') }}" alt="image-brand">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="brand-item">
+                            <img class="lazyload" data-src="{{ asset('clientFront/assets/images/brand/brand-02.png') }}" src="{{ asset('clientFront/assets/images/brand/brand-02.png') }}" alt="image-brand">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="brand-item">
+                            <img class="lazyload" data-src="{{ asset('clientFront/assets/images/brand/brand-03.png') }}" src="{{ asset('clientFront/assets/images/brand/brand-03.png') }}" alt="image-brand">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="brand-item">
+                            <img class="lazyload" data-src="{{ asset('clientFront/assets/images/brand/brand-04.png') }}" src="{{ asset('clientFront/assets/images/brand/brand-04.png') }}   " alt="image-brand">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="brand-item">
+                            <img class="lazyload" data-src="{{ asset('clientFront/assets/images/brand/brand-05.png') }}" src="{{ asset('clientFront/assets/images/brand/brand-05.png') }}" alt="image-brand">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="brand-item">
+                            <img class="lazyload" data-src="{{ asset('clientFront/assets/images/brand/brand-06.png') }}" src="{{ asset('clientFront/assets/images/brand/brand-06.png') }}" alt="image-brand">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sw-dots style-2 sw-pagination-brand justify-content-center"></div>
+        </div>
+    </section>
+    <!-- /brand -->
+    <!-- Shop Gram -->
+    <section class="flat-spacing-7">
+        <div class="container">
+            <div class="flat-title wow fadeInUp" data-wow-delay="0s">
+                <span class="title">Shop Gram</span>
+                <p class="sub-title">Inspire and let yourself be inspired, from one unique fashion to another.</p>
+            </div>
+            <div class="wrap-carousel wrap-shop-gram">
+                <div class="swiper tf-sw-shop-gallery" data-preview="5" data-tablet="3" data-mobile="2" data-space-lg="7" data-space-md="7">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="gallery-item hover-img wow fadeInUp" data-wow-delay=".2s">
+                                <div class="img-style">
+                                    <img class="lazyload img-hover" data-src="{{ asset('clientFront/assets/images/shop/gallery/gallery-7.jpg') }}" src="{{ asset('clientFront/assets/images/shop/gallery/gallery-7.jpg') }}" alt="image-gallery">
+                                </div>
+                                <a href="#quick_add" data-bs-toggle="modal" class="box-icon"><span class="icon icon-bag"></span> <span class="tooltip">Quick Add</span></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-item hover-img wow fadeInUp" data-wow-delay=".3s">
+                                <div class="img-style">
+                                    <img class="lazyload img-hover" data-src="{{ asset('clientFront/assets/images/shop/gallery/gallery-3.jpg') }}" src="{{ asset('clientFront/assets/images/shop/gallery/gallery-3.jpg') }}" alt="image-gallery">
+                                </div>
+                                <a href="#quick_add" data-bs-toggle="modal" class="box-icon"><span class="icon icon-bag"></span> <span class="tooltip">Quick Add</span></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-item hover-img wow fadeInUp" data-wow-delay=".4s">
+                                <div class="img-style">
+                                    <img class="lazyload img-hover" data-src="{{ asset('clientFront/assets/images/shop/gallery/gallery-5.jpg') }}" src="{{ asset('clientFront/assets/images/shop/gallery/gallery-5.jpg') }}" alt="image-gallery">
+                                </div>
+                                <a href="#quick_add" data-bs-toggle="modal" class="box-icon"><span class="icon icon-bag"></span> <span class="tooltip">Quick Add</span></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-item hover-img wow fadeInUp" data-wow-delay=".5s">
+                                <div class="img-style">
+                                    <img class="lazyload img-hover" data-src="{{ asset('clientFront/assets/images/shop/gallery/gallery-8.jpg') }}" src="{{ asset('clientFront/assets/images/shop/gallery/gallery-8.jpg') }}" alt="image-gallery">
+                                </div>
+                                <a href="product-detail.html" class="box-icon"><span class="icon icon-bag"></span> <span class="tooltip">View product</span></a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="gallery-item hover-img wow fadeInUp" data-wow-delay=".6s">
+                                <div class="img-style">
+                                    <img class="lazyload img-hover" data-src="{{ asset('clientFront/assets/images/shop/gallery/gallery-6.jpg') }}" src="{{ asset('clientFront/assets/images/shop/gallery/gallery-6.jpg') }}" alt="image-gallery">
+                                </div>
+                                <a href="product-detail.html" class="box-icon"><span class="icon icon-bag"></span> <span class="tooltip">View product</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sw-dots sw-pagination-gallery justify-content-center"></div>
+            </div>
+        </div>
+    </section>
+    <!-- /Shop Gram -->
+    <!-- Icon box -->
+    <section class="flat-spacing-7 flat-iconbox wow fadeInUp" data-wow-delay="0s">
+        <div class="container">
+            <div class="wrap-carousel wrap-mobile">
+                <div class="swiper tf-sw-mobile" data-preview="1" data-space="15">
+                    <div class="swiper-wrapper wrap-iconbox">
+                        <div class="swiper-slide">
+                            <div class="tf-icon-box style-border-line text-center">
+                                <div class="icon">
+                                    <i class="icon-shipping"></i>
+                                </div>
+                                <div class="content">
+                                    <div class="title">Free Shipping</div>
+                                    <p>Free shipping over order $120</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="tf-icon-box style-border-line text-center">
+                                <div class="icon">
+                                    <i class="icon-payment fs-22"></i>
+                                </div>
+                                <div class="content">
+                                    <div class="title">Flexible Payment</div>
+                                    <p>Pay with Multiple Credit Cards</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="tf-icon-box style-border-line text-center">
+                                <div class="icon">
+                                    <i class="icon-return fs-22"></i>
+                                </div>
+                                <div class="content">
+                                    <div class="title">14 Day Returns</div>
+                                    <p>Within 30 days for an exchange</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="tf-icon-box style-border-line text-center">
+                                <div class="icon">
+                                    <i class="icon-suport"></i>
+                                </div>
+                                <div class="content">
+                                    <div class="title">Premium Support</div>
+                                    <p>Outstanding premium support</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="sw-dots style-2 sw-pagination-mb justify-content-center"></div>
+            </div>
+        </div>
+    </section>
+    <!-- /Icon box -->
+    <!-- Footer -->
+    <footer id="footer" class="footer md-pb-70">
+        <div class="footer-wrap">
+            <div class="footer-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <div class="footer-infor">
+                                <div class="footer-logo">
+                                    <a href="index.html">
+                                        <img src="{{ asset('clientFront/assets/images/logo/logo.svg') }}    " alt="">
+                                    </a>
+                                </div>
+                                <ul>
                                     <li>
-                                        <a href="privacy-policy.html" class="footer-menu_item">Privacy Policy</a>
+                                        <p>Address: 1234 Fashion Street, Suite 567, <br> New York, NY 10001</p>
                                     </li>
-                                    <li> 
-                                        <a href="delivery-return.html" class="footer-menu_item">  Returns + Exchanges </a>
+                                    <li>
+                                        <p>Email: <a href="#">info@fashionshop.com</a></p>
                                     </li>
-                                    <li> 
-                                        <a href="shipping-delivery.html" class="footer-menu_item">Shipping</a>
-                                    </li>
-                                    <li> 
-                                        <a href="terms-conditions.html" class="footer-menu_item">Terms &amp; Conditions</a>
-                                    </li>
-                                    <li> 
-                                        <a href="faq-1.html" class="footer-menu_item">FAQ’s</a>
-                                    </li>
-                                    <li> 
-                                        <a href="compare.html" class="footer-menu_item">Compare</a>
-                                    </li>
-                                    <li> 
-                                        <a href="wishlist.html" class="footer-menu_item">My Wishlist</a>
+                                    <li>
+                                        <p>Phone: <a href="#">(212) 555-1234</a></p>
                                     </li>
                                 </ul>
-                            </div>
-                            <div class="col-xl-3 col-md-6 col-12 footer-col-block">
-                                <div class="footer-heading footer-heading-desktop">
-                                    <h6>About us</h6>
-                                </div>
-                                <div class="footer-heading footer-heading-moblie">
-                                    <h6>About us</h6>
-                                </div>
-                                <ul class="footer-menu-list tf-collapse-content">
-                                    <li>
-                                        <a href="about-us.html" class="footer-menu_item">Our Story</a>
-                                    </li>
-                                    <li> 
-                                        <a href="our-store.html" class="footer-menu_item">Visit Our Store</a>
-                                    </li>
-                                    <li> 
-                                        <a href="contact-1.html" class="footer-menu_item">Contact Us</a>
-                                    </li>
-                                    <li> 
-                                        <a href="login.html" class="footer-menu_item">Account</a>
-                                    </li>
+                                <a href="contact-1.html" class="tf-btn btn-line">Get direction<i class="icon icon-arrow1-top-left"></i></a>
+                                <ul class="tf-social-icon d-flex gap-10">
+                                    <li><a href="#" class="box-icon w_34 round social-facebook social-line"><i class="icon fs-14 icon-fb"></i></a></li>
+                                    <li><a href="#" class="box-icon w_34 round social-twiter social-line"><i class="icon fs-12 icon-Icon-x"></i></a></li>
+                                    <li><a href="#" class="box-icon w_34 round social-instagram social-line"><i class="icon fs-14 icon-instagram"></i></a></li>
+                                    <li><a href="#" class="box-icon w_34 round social-tiktok social-line"><i class="icon fs-14 icon-tiktok"></i></a></li>
+                                    <li><a href="#" class="box-icon w_34 round social-pinterest social-line"><i class="icon fs-14 icon-pinterest-1"></i></a></li>
                                 </ul>
                             </div>
-                            <div class="col-xl-3 col-md-6 col-12">
-                                <div class="footer-newsletter footer-col-block">
-                                    <div class="footer-heading footer-heading-desktop">
-                                        <h6>Sign Up for Email</h6>
-                                    </div>
-                                    <div class="footer-heading footer-heading-moblie">
-                                        <h6>Sign Up for Email</h6>
-                                    </div>
-                                    <div class="tf-collapse-content">
-                                        <div class="footer-menu_item">Sign up to get first dibs on new arrivals, sales, exclusive content, events and more!</div>
-                                        <form class="form-newsletter subscribe-form" id="" action="#" method="post" accept-charset="utf-8" data-mailchimp="true">
-                                            <div class="subscribe-content">
-                                                <fieldset class="email">
-                                                    <input type="email" name="email-form" class="subscribe-email" placeholder="Enter your email...." tabindex="0" aria-required="true">
-                                                </fieldset>
-                                                <div class="button-submit">
-                                                    <button id="" class="subscribe-button tf-btn btn-sm radius-3 btn-fill btn-icon animate-hover-btn" type="button">Subscribe<i class="icon icon-arrow1-top-left"></i></button>
-                                                </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-12 footer-col-block">
+                            <div class="footer-heading footer-heading-desktop">
+                                <h6>Help</h6>
+                            </div>
+                            <div class="footer-heading footer-heading-moblie">
+                                <h6>Help</h6>
+                            </div>
+                            <ul class="footer-menu-list tf-collapse-content">
+                                <li>
+                                    <a href="privacy-policy.html" class="footer-menu_item">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="delivery-return.html" class="footer-menu_item"> Returns + Exchanges </a>
+                                </li>
+                                <li>
+                                    <a href="shipping-delivery.html" class="footer-menu_item">Shipping</a>
+                                </li>
+                                <li>
+                                    <a href="terms-conditions.html" class="footer-menu_item">Terms &amp; Conditions</a>
+                                </li>
+                                <li>
+                                    <a href="faq-1.html" class="footer-menu_item">FAQ’s</a>
+                                </li>
+                                <li>
+                                    <a href="compare.html" class="footer-menu_item">Compare</a>
+                                </li>
+                                <li>
+                                    <a href="wishlist.html" class="footer-menu_item">My Wishlist</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-12 footer-col-block">
+                            <div class="footer-heading footer-heading-desktop">
+                                <h6>About us</h6>
+                            </div>
+                            <div class="footer-heading footer-heading-moblie">
+                                <h6>About us</h6>
+                            </div>
+                            <ul class="footer-menu-list tf-collapse-content">
+                                <li>
+                                    <a href="about-us.html" class="footer-menu_item">Our Story</a>
+                                </li>
+                                <li>
+                                    <a href="our-store.html" class="footer-menu_item">Visit Our Store</a>
+                                </li>
+                                <li>
+                                    <a href="contact-1.html" class="footer-menu_item">Contact Us</a>
+                                </li>
+                                <li>
+                                    <a href="login.html" class="footer-menu_item">Account</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <div class="footer-newsletter footer-col-block">
+                                <div class="footer-heading footer-heading-desktop">
+                                    <h6>Sign Up for Email</h6>
+                                </div>
+                                <div class="footer-heading footer-heading-moblie">
+                                    <h6>Sign Up for Email</h6>
+                                </div>
+                                <div class="tf-collapse-content">
+                                    <div class="footer-menu_item">Sign up to get first dibs on new arrivals, sales, exclusive content, events and more!</div>
+                                    <form class="form-newsletter subscribe-form" id="" action="#" method="post" accept-charset="utf-8" data-mailchimp="true">
+                                        <div class="subscribe-content">
+                                            <fieldset class="email">
+                                                <input type="email" name="email-form" class="subscribe-email" placeholder="Enter your email...." tabindex="0" aria-required="true">
+                                            </fieldset>
+                                            <div class="button-submit">
+                                                <button id="" class="subscribe-button tf-btn btn-sm radius-3 btn-fill btn-icon animate-hover-btn" type="button">Subscribe<i class="icon icon-arrow1-top-left"></i></button>
                                             </div>
-                                            <div class="subscribe-msg"></div>
-                                        </form>
-                                        <div class="tf-cur">
-                                            <div class="tf-currencies">
-                                                <select class="image-select center style-default type-currencies">
-                                                        <option data-thumbnail="{{ asset('clientFront/assets/images/country/fr.svg') }}">EUR <span>€ | France</span></option>
-                                                    <option data-thumbnail="{{ asset('clientFront/assets/images/country/de.svg') }}">EUR <span>€ | Germany</span></option>
-                                                    <option selected data-thumbnail="{{ asset('clientFront/assets/images/country/us.svg') }}">USD <span>$ | United States</span></option>
-                                                    <option data-thumbnail="{{ asset('clientFront/assets/images/country/vn.svg') }}">VND <span>₫ | Vietnam</span></option>
-                                                </select>
-                                            </div>
-                                            <div class="tf-languages">
-                                                <select class="image-select center style-default type-languages">
-                                                    <option>English</option>
-                                                    <option>العربية</option>
-                                                    <option>简体中文</option>
-                                                    <option>اردو</option>
-                                                </select>
-                                            </div>
+                                        </div>
+                                        <div class="subscribe-msg"></div>
+                                    </form>
+                                    <div class="tf-cur">
+                                        <div class="tf-currencies">
+                                            <select class="image-select center style-default type-currencies">
+                                                <option data-thumbnail="{{ asset('clientFront/assets/images/country/fr.svg') }}">EUR <span>€ | France</span></option>
+                                                <option data-thumbnail="{{ asset('clientFront/assets/images/country/de.svg') }}">EUR <span>€ | Germany</span></option>
+                                                <option selected data-thumbnail="{{ asset('clientFront/assets/images/country/us.svg') }}">USD <span>$ | United States</span></option>
+                                                <option data-thumbnail="{{ asset('clientFront/assets/images/country/vn.svg') }}">VND <span>₫ | Vietnam</span></option>
+                                            </select>
+                                        </div>
+                                        <div class="tf-languages">
+                                            <select class="image-select center style-default type-languages">
+                                                <option>English</option>
+                                                <option>العربية</option>
+                                                <option>简体中文</option>
+                                                <option>اردو</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -1404,38 +1426,39 @@
                         </div>
                     </div>
                 </div>
-                <div class="footer-bottom">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="footer-bottom-wrap d-flex gap-20 flex-wrap justify-content-between align-items-center">
-                                    <div class="footer-menu_item">© 2024 Ecomus Store. All Rights Reserved</div>
-                                    <div class="tf-payment">
-                                        <img src="{{ asset('clientFront/assets/images/payments/visa.png') }}" alt="">
-                                        <img src="{{ asset('clientFront/assets/images/payments/img-1.png') }}   " alt="">
-                                        <img src="{{ asset('clientFront/assets/images/payments/img-2.png') }}" alt="">
-                                        <img src="{{ asset('clientFront/assets/images/payments/img-3.png') }}" alt="">
-                                        <img src="{{ asset('clientFront/assets/images/payments/img-4.png') }}" alt="">
-                                    </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="footer-bottom-wrap d-flex gap-20 flex-wrap justify-content-between align-items-center">
+                                <div class="footer-menu_item">© 2024 Ecomus Store. All Rights Reserved</div>
+                                <div class="tf-payment">
+                                    <img src="{{ asset('clientFront/assets/images/payments/visa.png') }}" alt="">
+                                    <img src="{{ asset('clientFront/assets/images/payments/img-1.png') }}   " alt="">
+                                    <img src="{{ asset('clientFront/assets/images/payments/img-2.png') }}" alt="">
+                                    <img src="{{ asset('clientFront/assets/images/payments/img-3.png') }}" alt="">
+                                    <img src="{{ asset('clientFront/assets/images/payments/img-4.png') }}" alt="">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- /Footer -->
-        
+        </div>
+    </footer>
+    <!-- /Footer -->
+
     </div>
-    
+
     <!-- gotop -->
     <div class="progress-wrap">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 286.138;"></path>
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 286.138;"></path>
         </svg>
     </div>
     <!-- /gotop -->
-    
+
     <!-- toolbar-bottom -->
     <div class="tf-toolbar-bottom type-1150">
         <div class="toolbar-item">
@@ -1446,7 +1469,7 @@
                 <div class="toolbar-label">Shop</div>
             </a>
         </div>
-        
+
         <div class="toolbar-item">
             <a href="#canvasSearch" data-bs-toggle="offcanvas" aria-controls="offcanvasLeft">
                 <div class="toolbar-icon">
@@ -1457,38 +1480,42 @@
         </div>
         <div class="toolbar-item">
             @auth
-                <!-- Mobile User Profile Dropdown -->
-                <div class="dropdown dropup">
-                    <a href="#" class="d-flex flex-column align-items-center text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false" style="color: inherit;">
-                        <div class="toolbar-icon">
-                            <i class="icon-account"></i>
+            <!-- Mobile User Profile Dropdown -->
+            <div class="dropdown dropup">
+                <a href="#" class="d-flex flex-column align-items-center text-decoration-none" data-bs-toggle="dropdown" aria-expanded="false" style="color: inherit;">
+                    <div class="toolbar-icon">
+                        <i class="icon-account"></i>
+                    </div>
+                    <div class="toolbar-label text-truncate" style="max-width: 60px;">{{ auth()->user()->name }}</div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-center" style="min-width: 200px;">
+                    <li>
+                        <div class="dropdown-header">
+                            <strong>{{ auth()->user()->name }}</strong>
+                            <br>
+                            <small class="text-muted">{{ auth()->user()->email }}</small>
                         </div>
-                        <div class="toolbar-label text-truncate" style="max-width: 60px;">{{ auth()->user()->name }}</div>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-center" style="min-width: 200px;">
-                        <li>
-                            <div class="dropdown-header">
-                                <strong>{{ auth()->user()->name }}</strong>
-                                <br>
-                                <small class="text-muted">{{ auth()->user()->email }}</small>
-                            </div>
-                        </li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="{{ route('profile.edit') }}"><i class="icon icon-account me-2"></i>My Account</a></li>
-                        @if(auth()->user()->role == 'admin')
-                            <li><a class="dropdown-item" href="{{ route('adminView') }}"><i class="icon icon-settings me-2"></i>Admin Panel</a></li>
-                        @endif
-                        <li><hr class="dropdown-divider"></li>
-                        <li>
-                            <form method="POST" action="{{ route('logout') }}" class="d-inline">
-                                @csrf
-                                <button type="submit" class="dropdown-item text-danger"><i class="icon icon-logout me-2"></i>Logout</button>
-                            </form>
-                        </li>
-                    </ul>
-                </div>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="{{ route('profile.edit') }}"><i class="icon icon-account me-2"></i>My Account</a></li>
+                    @if(auth()->user()->role == 'admin')
+                    <li><a class="dropdown-item" href="{{ route('adminView') }}"><i class="icon icon-settings me-2"></i>Admin Panel</a></li>
+                    @endif
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                            @csrf
+                            <button type="submit" class="dropdown-item text-danger"><i class="icon icon-logout me-2"></i>Logout</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
             @else
-                <!-- Mobile Login Modal Trigger -->
+            <!-- Mobile Login Modal Trigger -->
             <a href="#login" data-bs-toggle="modal">
                 <div class="toolbar-icon">
                     <i class="icon-account"></i>
@@ -1814,14 +1841,14 @@
                                 <span class="demo-name">Home Baby</span>
                             </a>
                         </div>
-                        
+
                     </div>
                 </div>
-                
-            </div> 
+
+            </div>
         </div>
     </div>
-    <!-- /modalDemo -->    
+    <!-- /modalDemo -->
 
     <!-- mobile menu -->
     <div class="offcanvas offcanvas-start canvas-mb" id="mobileMenu">
@@ -1835,7 +1862,7 @@
                             <span class="btn-open-sub"></span>
                         </a>
                         <div id="dropdown-menu-one" class="collapse">
-                            <ul class="sub-nav-menu" >
+                            <ul class="sub-nav-menu">
                                 <li><a href="index.html" class="sub-nav-link">Home Fashion 01</a></li>
                                 <li><a href="home-02.html" class="sub-nav-link">Home Fashion 02</a></li>
                                 <li><a href="home-03.html" class="sub-nav-link">Home Fashion 03</a></li>
@@ -1874,7 +1901,7 @@
                                 <li><a href="home-baby.html" class="sub-nav-link">Home Baby</a></li>
                             </ul>
                         </div>
-                        
+
                     </li>
                     <li class="nav-mb-item">
                         <a href="#dropdown-menu-two" class="collapsed mb-menu-link current" data-bs-toggle="collapse" aria-expanded="true" aria-controls="dropdown-menu-two">
@@ -1883,7 +1910,7 @@
                         </a>
                         <div id="dropdown-menu-two" class="collapse">
                             <ul class="sub-nav-menu" id="sub-menu-navigation">
-                                <li><a href="#sub-shop-one" class="sub-nav-link collapsed"  data-bs-toggle="collapse" aria-expanded="true" aria-controls="sub-shop-one">
+                                <li><a href="#sub-shop-one" class="sub-nav-link collapsed" data-bs-toggle="collapse" aria-expanded="true" aria-controls="sub-shop-one">
                                         <span>Shop layouts</span>
                                         <span class="btn-open-sub"></span>
                                     </a>
@@ -1899,7 +1926,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#sub-shop-two" class="sub-nav-link collapsed"  data-bs-toggle="collapse" aria-expanded="true" aria-controls="sub-shop-two">
+                                    <a href="#sub-shop-two" class="sub-nav-link collapsed" data-bs-toggle="collapse" aria-expanded="true" aria-controls="sub-shop-two">
                                         <span>Features</span>
                                         <span class="btn-open-sub"></span>
                                     </a>
@@ -1914,7 +1941,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#sub-shop-three" class="sub-nav-link collapsed"  data-bs-toggle="collapse" aria-expanded="true" aria-controls="sub-shop-three">
+                                    <a href="#sub-shop-three" class="sub-nav-link collapsed" data-bs-toggle="collapse" aria-expanded="true" aria-controls="sub-shop-three">
                                         <span>Product styles</span>
                                         <span class="btn-open-sub"></span>
                                     </a>
@@ -1942,7 +1969,7 @@
                         <div id="dropdown-menu-three" class="collapse">
                             <ul class="sub-nav-menu" id="sub-menu-navigation">
                                 <li>
-                                    <a href="#sub-product-one" class="sub-nav-link collapsed"  data-bs-toggle="collapse" aria-expanded="true" aria-controls="sub-product-one">
+                                    <a href="#sub-product-one" class="sub-nav-link collapsed" data-bs-toggle="collapse" aria-expanded="true" aria-controls="sub-product-one">
                                         <span>Product layouts</span>
                                         <span class="btn-open-sub"></span>
                                     </a>
@@ -1962,7 +1989,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#sub-product-two" class="sub-nav-link collapsed"  data-bs-toggle="collapse" aria-expanded="true" aria-controls="sub-product-two">
+                                    <a href="#sub-product-two" class="sub-nav-link collapsed" data-bs-toggle="collapse" aria-expanded="true" aria-controls="sub-product-two">
                                         <span>Product details</span>
                                         <span class="btn-open-sub"></span>
                                     </a>
@@ -1982,7 +2009,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#sub-product-three" class="sub-nav-link collapsed"  data-bs-toggle="collapse" aria-expanded="true" aria-controls="sub-product-three">
+                                    <a href="#sub-product-three" class="sub-nav-link collapsed" data-bs-toggle="collapse" aria-expanded="true" aria-controls="sub-product-three">
                                         <span>Product swatchs</span>
                                         <span class="btn-open-sub"></span>
                                     </a>
@@ -1999,7 +2026,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#sub-product-four" class="sub-nav-link collapsed"  data-bs-toggle="collapse" aria-expanded="true" aria-controls="sub-product-four">
+                                    <a href="#sub-product-four" class="sub-nav-link collapsed" data-bs-toggle="collapse" aria-expanded="true" aria-controls="sub-product-four">
                                         <span>Product features</span>
                                         <span class="btn-open-sub"></span>
                                     </a>
@@ -2041,9 +2068,9 @@
                                 <li><a href="checkout.html" class="sub-nav-link line-clamp">Check out</a></li>
                                 <li><a href="payment-confirmation.html" class="sub-nav-link line-clamp">Payment Confirmation</a></li>
                                 <li><a href="payment-failure.html" class="sub-nav-link line-clamp">Payment Failure</a></li>
-                                <li><a href="#sub-account" class="sub-nav-link collapsed"  data-bs-toggle="collapse" aria-expanded="true" aria-controls="sub-account">
-                                    <span>My Account</span>
-                                    <span class="btn-open-sub"></span>
+                                <li><a href="#sub-account" class="sub-nav-link collapsed" data-bs-toggle="collapse" aria-expanded="true" aria-controls="sub-account">
+                                        <span>My Account</span>
+                                        <span class="btn-open-sub"></span>
                                     </a>
                                     <div id="sub-account" class="collapse">
                                         <ul class="sub-nav-menu sub-menu-level-2">
@@ -2059,7 +2086,7 @@
                                 <li><a href="invoice.html" class="sub-nav-link line-clamp">Invoice</a></li>
                             </ul>
                         </div>
-                        
+
                     </li>
                     <li class="nav-mb-item">
                         <a href="#dropdown-menu-five" class="collapsed mb-menu-link current" data-bs-toggle="collapse" aria-expanded="true" aria-controls="dropdown-menu-five">
@@ -2067,7 +2094,7 @@
                             <span class="btn-open-sub"></span>
                         </a>
                         <div id="dropdown-menu-five" class="collapse">
-                            <ul class="sub-nav-menu" >
+                            <ul class="sub-nav-menu">
                                 <li><a href="blog-grid.html" class="sub-nav-link">Grid layout</a></li>
                                 <li><a href="blog-sidebar-left.html" class="sub-nav-link">Left sidebar</a></li>
                                 <li><a href="blog-sidebar-right.html" class="sub-nav-link">Right sidebar</a></li>
@@ -2075,7 +2102,7 @@
                                 <li><a href="blog-detail.html" class="sub-nav-link">Single Post</a></li>
                             </ul>
                         </div>
-                        
+
                     </li>
                     <li class="nav-mb-item">
                         <a href="https://themeforest.net/item/ecomus-ultimate-html5-template/53417990?s_rank=3" class="mb-menu-link">Buy now</a>
@@ -2098,25 +2125,25 @@
             </div>
             <div class="mb-bottom">
                 @auth
-                    <div class="site-nav-icon d-flex align-items-center">
-                        <i class="icon icon-account me-2"></i>
-                        <div>
-                            <div class="fw-bold">{{ auth()->user()->name }}</div>
-                            <small class="text-muted">{{ auth()->user()->email }}</small>
-                        </div>
+                <div class="site-nav-icon d-flex align-items-center">
+                    <i class="icon icon-account me-2"></i>
+                    <div>
+                        <div class="fw-bold">{{ auth()->user()->name }}</div>
+                        <small class="text-muted">{{ auth()->user()->email }}</small>
                     </div>
-                    <div class="mt-2">
-                        <a href="{{ route('profile.edit') }}" class="btn btn-sm btn-outline-primary me-2">Profile</a>
-                        @if(auth()->user()->role == 'admin')
-                            <a href="{{ route('adminView') }}" class="btn btn-sm btn-outline-secondary me-2">Admin</a>
-                        @endif
-                        <form method="POST" action="{{ route('logout') }}" class="d-inline">
-                            @csrf
-                            <button type="submit" class="btn btn-sm btn-outline-danger">Logout</button>
-                        </form>
-                    </div>
+                </div>
+                <div class="mt-2">
+                    <a href="{{ route('profile.edit') }}" class="btn btn-sm btn-outline-primary me-2">Profile</a>
+                    @if(auth()->user()->role == 'admin')
+                    <a href="{{ route('adminView') }}" class="btn btn-sm btn-outline-secondary me-2">Admin</a>
+                    @endif
+                    <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                        @csrf
+                        <button type="submit" class="btn btn-sm btn-outline-danger">Logout</button>
+                    </form>
+                </div>
                 @else
-                    <a href="#login" data-bs-toggle="modal" class="site-nav-icon"><i class="icon icon-account"></i>Login</a>
+                <a href="#login" data-bs-toggle="modal" class="site-nav-icon"><i class="icon icon-account"></i>Login</a>
                 @endauth
                 <div class="bottom-bar-language">
                     <div class="tf-currencies">
@@ -2137,7 +2164,7 @@
                     </div>
                 </div>
             </div>
-        </div>       
+        </div>
     </div>
     <!-- /mobile menu -->
 
@@ -2283,7 +2310,7 @@
                         <div id="cate-menu-one" class="collapse list-cate">
                             <ul class="sub-nav-menu" id="cate-menu-navigation">
                                 <li>
-                                    <a href="#cate-shop-one" class="tf-category-link has-children sub-nav-link collapsed"  data-bs-toggle="collapse" aria-expanded="true" aria-controls="cate-shop-one">
+                                    <a href="#cate-shop-one" class="tf-category-link has-children sub-nav-link collapsed" data-bs-toggle="collapse" aria-expanded="true" aria-controls="cate-shop-one">
                                         <div class="image">
                                             <img src="{{ asset('clientFront/assets/images/shop/cate/cate6.jpg') }}" alt="">
                                         </div>
@@ -2312,7 +2339,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a href="#cate-shop-two" class="tf-category-link has-children sub-nav-link collapsed"  data-bs-toggle="collapse" aria-expanded="true" aria-controls="cate-shop-two">
+                                    <a href="#cate-shop-two" class="tf-category-link has-children sub-nav-link collapsed" data-bs-toggle="collapse" aria-expanded="true" aria-controls="cate-shop-two">
                                         <div class="image">
                                             <img src="{{ asset('clientFront/assets/images/shop/cate/cate9.jpg') }}" alt="">
                                         </div>
@@ -2422,7 +2449,7 @@
             <div class="mb-bottom">
                 <a href="shop-default.html" class="tf-btn fw-5 btn-line">View all collection<i class="icon icon-arrow1-top-left"></i></a>
             </div>
-        </div>       
+        </div>
     </div>
     <!-- /toolbarShopmb -->
 
@@ -2437,18 +2464,18 @@
                 <div class="tf-login-form">
                     <!-- Display validation errors -->
                     @if ($errors->any())
-                        <div class="alert alert-danger mb-3" style="padding: 10px; background-color: #f8d7da; border: 1px solid #f5c6cb; border-radius: 5px; color: #721c24;">
-                            <ul style="margin: 0; padding-left: 20px;">
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
+                    <div class="alert alert-danger mb-3" style="padding: 10px; background-color: #f8d7da; border: 1px solid #f5c6cb; border-radius: 5px; color: #721c24;">
+                        <ul style="margin: 0; padding-left: 20px;">
+                            @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
                     @endif
-                    
+
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-                        
+
                         <div class="tf-field style-1">
                             <input class="tf-field-input tf-input" placeholder=" " type="email" name="email" required>
                             <label class="tf-field-label" for="">Email *</label>
@@ -2457,7 +2484,7 @@
                             <input class="tf-field-input tf-input" placeholder=" " type="password" name="password" required>
                             <label class="tf-field-label" for="">Password *</label>
                         </div>
-                        
+
                         <!-- Remember Me -->
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <label class="d-flex align-items-center">
@@ -2466,8 +2493,8 @@
                             </label>
                             <a href="{{ route('password.request') }}" class="btn-link link small">Forgot your password?</a>
                         </div>
-                        
-                        <div class="bottom"> 
+
+                        <div class="bottom">
                             <div class="w-100">
                                 <button type="submit" class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Log in</span></button>
                             </div>
@@ -2504,7 +2531,7 @@
                         <div>
                             <a href="#login" data-bs-toggle="modal" class="btn-link link">Cancel</a>
                         </div>
-                        <div class="bottom"> 
+                        <div class="bottom">
                             <div class="w-100">
                                 <button type="submit" class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Send Reset Link</span></button>
                             </div>
@@ -2523,7 +2550,7 @@
                     <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
                 </div>
                 <div class="tf-login-form">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register.store') }}">
                         @csrf
                         <div class="tf-field style-1">
                             <input class="tf-field-input tf-input" placeholder=" " type="text" name="name" required>
@@ -2541,7 +2568,7 @@
                             <input class="tf-field-input tf-input" placeholder=" " type="password" name="password_confirmation" required>
                             <label class="tf-field-label" for="">Confirm Password *</label>
                         </div>
-                        <div class="bottom"> 
+                        <div class="bottom">
                             <div class="w-100">
                                 <button type="submit" class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Register</span></button>
                             </div>
@@ -2632,7 +2659,7 @@
                                         <div class="sw-dots small style-2 cart-slide-pagination"></div>
                                     </div>
                                     <div class="swiper tf-cart-slide">
-                                        <div class="swiper-wrapper" >
+                                        <div class="swiper-wrapper">
                                             <div class="swiper-slide">
                                                 <div class="tf-minicart-recommendations-item">
                                                     <div class="tf-minicart-recommendations-item-image">
@@ -2677,13 +2704,20 @@
                         <div class="tf-mini-cart-bottom">
                             <div class="tf-mini-cart-tool">
                                 <div class="tf-mini-cart-tool-btn btn-add-note">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="currentColor"><path d="M5.12187 16.4582H2.78952C2.02045 16.4582 1.39476 15.8325 1.39476 15.0634V2.78952C1.39476 2.02045 2.02045 1.39476 2.78952 1.39476H11.3634C12.1325 1.39476 12.7582 2.02045 12.7582 2.78952V7.07841C12.7582 7.46357 13.0704 7.77579 13.4556 7.77579C13.8407 7.77579 14.1529 7.46357 14.1529 7.07841V2.78952C14.1529 1.25138 12.9016 0 11.3634 0H2.78952C1.25138 0 0 1.25138 0 2.78952V15.0634C0 16.6015 1.25138 17.8529 2.78952 17.8529H5.12187C5.50703 17.8529 5.81925 17.5407 5.81925 17.1555C5.81925 16.7704 5.50703 16.4582 5.12187 16.4582Z"></path><path d="M15.3882 10.0971C14.5724 9.28136 13.2452 9.28132 12.43 10.0965L8.60127 13.9168C8.51997 13.9979 8.45997 14.0979 8.42658 14.2078L7.59276 16.9528C7.55646 17.0723 7.55292 17.1993 7.58249 17.3207C7.61206 17.442 7.67367 17.5531 7.76087 17.6425C7.84807 17.7319 7.95768 17.7962 8.07823 17.8288C8.19879 17.8613 8.32587 17.8609 8.44621 17.8276L11.261 17.0479C11.3769 17.0158 11.4824 16.9543 11.5675 16.8694L15.3882 13.0559C16.2039 12.2401 16.2039 10.9129 15.3882 10.0971ZM10.712 15.7527L9.29586 16.145L9.71028 14.7806L12.2937 12.2029L13.2801 13.1893L10.712 15.7527ZM14.4025 12.0692L14.2673 12.204L13.2811 11.2178L13.4157 11.0834C13.6876 10.8115 14.1301 10.8115 14.402 11.0834C14.6739 11.3553 14.6739 11.7977 14.4025 12.0692Z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="currentColor">
+                                        <path d="M5.12187 16.4582H2.78952C2.02045 16.4582 1.39476 15.8325 1.39476 15.0634V2.78952C1.39476 2.02045 2.02045 1.39476 2.78952 1.39476H11.3634C12.1325 1.39476 12.7582 2.02045 12.7582 2.78952V7.07841C12.7582 7.46357 13.0704 7.77579 13.4556 7.77579C13.8407 7.77579 14.1529 7.46357 14.1529 7.07841V2.78952C14.1529 1.25138 12.9016 0 11.3634 0H2.78952C1.25138 0 0 1.25138 0 2.78952V15.0634C0 16.6015 1.25138 17.8529 2.78952 17.8529H5.12187C5.50703 17.8529 5.81925 17.5407 5.81925 17.1555C5.81925 16.7704 5.50703 16.4582 5.12187 16.4582Z"></path>
+                                        <path d="M15.3882 10.0971C14.5724 9.28136 13.2452 9.28132 12.43 10.0965L8.60127 13.9168C8.51997 13.9979 8.45997 14.0979 8.42658 14.2078L7.59276 16.9528C7.55646 17.0723 7.55292 17.1993 7.58249 17.3207C7.61206 17.442 7.67367 17.5531 7.76087 17.6425C7.84807 17.7319 7.95768 17.7962 8.07823 17.8288C8.19879 17.8613 8.32587 17.8609 8.44621 17.8276L11.261 17.0479C11.3769 17.0158 11.4824 16.9543 11.5675 16.8694L15.3882 13.0559C16.2039 12.2401 16.2039 10.9129 15.3882 10.0971ZM10.712 15.7527L9.29586 16.145L9.71028 14.7806L12.2937 12.2029L13.2801 13.1893L10.712 15.7527ZM14.4025 12.0692L14.2673 12.204L13.2811 11.2178L13.4157 11.0834C13.6876 10.8115 14.1301 10.8115 14.402 11.0834C14.6739 11.3553 14.6739 11.7977 14.4025 12.0692Z"></path>
+                                    </svg>
                                 </div>
                                 <div class="tf-mini-cart-tool-btn btn-add-gift">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.99566 2.73409C2.99566 0.55401 5.42538 -0.746668 7.23916 0.463462L8.50073 1.30516L9.7623 0.463462C11.5761 -0.746668 14.0058 0.55401 14.0058 2.73409V3.24744H14.8225C15.9633 3.24744 16.8881 4.17233 16.8881 5.31312V6.82566C16.8881 7.21396 16.5734 7.52873 16.1851 7.52873H15.8905V15.1877C15.8905 15.1905 15.8905 15.1933 15.8905 15.196C15.886 16.7454 14.6286 18 13.0782 18H3.92323C2.37003 18 1.11091 16.7409 1.11091 15.1877V7.52877H0.81636C0.42806 7.52877 0.113281 7.21399 0.113281 6.82569V5.31316C0.113281 4.17228 1.03812 3.24744 2.179 3.24744H2.99566V2.73409ZM4.40181 3.24744H7.79765V2.52647L6.45874 1.63317C5.57987 1.0468 4.40181 1.67677 4.40181 2.73409V3.24744ZM9.20381 2.52647V3.24744H12.5996V2.73409C12.5996 1.67677 11.4216 1.0468 10.5427 1.63317L9.20381 2.52647ZM2.179 4.6536C1.81472 4.6536 1.51944 4.94888 1.51944 5.31316V6.12261H5.73398L5.734 4.6536H2.179ZM5.73401 7.52877V13.9306C5.73401 14.1806 5.86682 14.4119 6.08281 14.5379C6.29879 14.6639 6.56545 14.6657 6.78312 14.5426L8.50073 13.5715L10.2183 14.5426C10.436 14.6657 10.7027 14.6639 10.9187 14.5379C11.1346 14.4119 11.2674 14.1806 11.2674 13.9306V7.52873H14.4844V15.1603C14.4844 15.1627 14.4843 15.1651 14.4843 15.1675V15.1877C14.4843 15.9643 13.8548 16.5938 13.0782 16.5938H3.92323C3.14663 16.5938 2.51707 15.9643 2.51707 15.1877V7.52877H5.73401ZM15.482 6.12258V5.31312C15.482 4.94891 15.1867 4.6536 14.8225 4.6536H11.2674V6.12258H15.482ZM9.86129 4.6536H7.14017V12.7254L8.15469 12.1518C8.36941 12.0304 8.63204 12.0304 8.84676 12.1518L9.86129 12.7254V4.6536Z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="currentColor">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.99566 2.73409C2.99566 0.55401 5.42538 -0.746668 7.23916 0.463462L8.50073 1.30516L9.7623 0.463462C11.5761 -0.746668 14.0058 0.55401 14.0058 2.73409V3.24744H14.8225C15.9633 3.24744 16.8881 4.17233 16.8881 5.31312V6.82566C16.8881 7.21396 16.5734 7.52873 16.1851 7.52873H15.8905V15.1877C15.8905 15.1905 15.8905 15.1933 15.8905 15.196C15.886 16.7454 14.6286 18 13.0782 18H3.92323C2.37003 18 1.11091 16.7409 1.11091 15.1877V7.52877H0.81636C0.42806 7.52877 0.113281 7.21399 0.113281 6.82569V5.31316C0.113281 4.17228 1.03812 3.24744 2.179 3.24744H2.99566V2.73409ZM4.40181 3.24744H7.79765V2.52647L6.45874 1.63317C5.57987 1.0468 4.40181 1.67677 4.40181 2.73409V3.24744ZM9.20381 2.52647V3.24744H12.5996V2.73409C12.5996 1.67677 11.4216 1.0468 10.5427 1.63317L9.20381 2.52647ZM2.179 4.6536C1.81472 4.6536 1.51944 4.94888 1.51944 5.31316V6.12261H5.73398L5.734 4.6536H2.179ZM5.73401 7.52877V13.9306C5.73401 14.1806 5.86682 14.4119 6.08281 14.5379C6.29879 14.6639 6.56545 14.6657 6.78312 14.5426L8.50073 13.5715L10.2183 14.5426C10.436 14.6657 10.7027 14.6639 10.9187 14.5379C11.1346 14.4119 11.2674 14.1806 11.2674 13.9306V7.52873H14.4844V15.1603C14.4844 15.1627 14.4843 15.1651 14.4843 15.1675V15.1877C14.4843 15.9643 13.8548 16.5938 13.0782 16.5938H3.92323C3.14663 16.5938 2.51707 15.9643 2.51707 15.1877V7.52877H5.73401ZM15.482 6.12258V5.31312C15.482 4.94891 15.1867 4.6536 14.8225 4.6536H11.2674V6.12258H15.482ZM9.86129 4.6536H7.14017V12.7254L8.15469 12.1518C8.36941 12.0304 8.63204 12.0304 8.84676 12.1518L9.86129 12.7254V4.6536Z"></path>
+                                    </svg>
                                 </div>
                                 <div class="tf-mini-cart-tool-btn btn-estimate-shipping">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="18" viewBox="0 0 26 18" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.811989C0 0.36354 0.36354 0 0.811989 0H15.4278C15.8763 0 16.2398 0.36354 16.2398 0.811989V3.10596H21.0144C23.6241 3.10596 25.8643 5.05894 25.8643 7.61523V14.6414C25.8643 15.0899 25.5007 15.4534 25.0523 15.4534H23.545C23.2139 16.9115 21.9098 18 20.3514 18C18.7931 18 17.4889 16.9115 17.1578 15.4534H8.69534C8.36423 16.9115 7.0601 18 5.50175 18C3.9434 18 2.63927 16.9115 2.30815 15.4534H0.811989C0.36354 15.4534 0 15.0899 0 14.6414V0.811989ZM2.35089 13.8294C2.74052 12.4562 4.00366 11.4503 5.50175 11.4503C6.99983 11.4503 8.26298 12.4562 8.6526 13.8294H14.6158V1.62398H1.62398V13.8294H2.35089ZM16.2398 4.72994V7.95749H24.2403V7.61523C24.2403 6.08759 22.8649 4.72994 21.0144 4.72994H16.2398ZM24.2403 9.58147H16.2398V13.8294H17.2006C17.5902 12.4562 18.8533 11.4503 20.3514 11.4503C21.8495 11.4503 23.1126 12.4562 23.5023 13.8294H24.2403V9.58147ZM5.50175 13.0743C4.58999 13.0743 3.85087 13.8134 3.85087 14.7251C3.85087 15.6369 4.58999 16.376 5.50175 16.376C6.41351 16.376 7.15263 15.6369 7.15263 14.7251C7.15263 13.8134 6.41351 13.0743 5.50175 13.0743ZM20.3514 13.0743C19.4397 13.0743 18.7005 13.8134 18.7005 14.7251C18.7005 15.6369 19.4397 16.376 20.3514 16.376C21.2632 16.376 22.0023 15.6369 22.0023 14.7251C22.0023 13.8134 21.2632 13.0743 20.3514 13.0743Z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="18" viewBox="0 0 26 18" fill="currentColor">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.811989C0 0.36354 0.36354 0 0.811989 0H15.4278C15.8763 0 16.2398 0.36354 16.2398 0.811989V3.10596H21.0144C23.6241 3.10596 25.8643 5.05894 25.8643 7.61523V14.6414C25.8643 15.0899 25.5007 15.4534 25.0523 15.4534H23.545C23.2139 16.9115 21.9098 18 20.3514 18C18.7931 18 17.4889 16.9115 17.1578 15.4534H8.69534C8.36423 16.9115 7.0601 18 5.50175 18C3.9434 18 2.63927 16.9115 2.30815 15.4534H0.811989C0.36354 15.4534 0 15.0899 0 14.6414V0.811989ZM2.35089 13.8294C2.74052 12.4562 4.00366 11.4503 5.50175 11.4503C6.99983 11.4503 8.26298 12.4562 8.6526 13.8294H14.6158V1.62398H1.62398V13.8294H2.35089ZM16.2398 4.72994V7.95749H24.2403V7.61523C24.2403 6.08759 22.8649 4.72994 21.0144 4.72994H16.2398ZM24.2403 9.58147H16.2398V13.8294H17.2006C17.5902 12.4562 18.8533 11.4503 20.3514 11.4503C21.8495 11.4503 23.1126 12.4562 23.5023 13.8294H24.2403V9.58147ZM5.50175 13.0743C4.58999 13.0743 3.85087 13.8134 3.85087 14.7251C3.85087 15.6369 4.58999 16.376 5.50175 16.376C6.41351 16.376 7.15263 15.6369 7.15263 14.7251C7.15263 13.8134 6.41351 13.0743 5.50175 13.0743ZM20.3514 13.0743C19.4397 13.0743 18.7005 13.8134 18.7005 14.7251C18.7005 15.6369 19.4397 16.376 20.3514 16.376C21.2632 16.376 22.0023 15.6369 22.0023 14.7251C22.0023 13.8134 21.2632 13.0743 20.3514 13.0743Z"></path>
+                                    </svg>
                                 </div>
                             </div>
                             <div class="tf-mini-cart-bottom-wrap">
@@ -2701,7 +2735,7 @@
                                         </div>
                                     </div>
                                     <label for="CartDrawer-Form_agree">
-                                        I agree with the 
+                                        I agree with the
                                         <a href="#" title="Terms of Service">terms and conditions</a>
                                     </label>
                                 </div>
@@ -2716,7 +2750,10 @@
                             <div class="tf-mini-cart-tool-content">
                                 <label for="Cart-note" class="tf-mini-cart-tool-text">
                                     <div class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="currentColor"><path d="M5.12187 16.4582H2.78952C2.02045 16.4582 1.39476 15.8325 1.39476 15.0634V2.78952C1.39476 2.02045 2.02045 1.39476 2.78952 1.39476H11.3634C12.1325 1.39476 12.7582 2.02045 12.7582 2.78952V7.07841C12.7582 7.46357 13.0704 7.77579 13.4556 7.77579C13.8407 7.77579 14.1529 7.46357 14.1529 7.07841V2.78952C14.1529 1.25138 12.9016 0 11.3634 0H2.78952C1.25138 0 0 1.25138 0 2.78952V15.0634C0 16.6015 1.25138 17.8529 2.78952 17.8529H5.12187C5.50703 17.8529 5.81925 17.5407 5.81925 17.1555C5.81925 16.7704 5.50703 16.4582 5.12187 16.4582Z"></path><path d="M15.3882 10.0971C14.5724 9.28136 13.2452 9.28132 12.43 10.0965L8.60127 13.9168C8.51997 13.9979 8.45997 14.0979 8.42658 14.2078L7.59276 16.9528C7.55646 17.0723 7.55292 17.1993 7.58249 17.3207C7.61206 17.442 7.67367 17.5531 7.76087 17.6425C7.84807 17.7319 7.95768 17.7962 8.07823 17.8288C8.19879 17.8613 8.32587 17.8609 8.44621 17.8276L11.261 17.0479C11.3769 17.0158 11.4824 16.9543 11.5675 16.8694L15.3882 13.0559C16.2039 12.2401 16.2039 10.9129 15.3882 10.0971ZM10.712 15.7527L9.29586 16.145L9.71028 14.7806L12.2937 12.2029L13.2801 13.1893L10.712 15.7527ZM14.4025 12.0692L14.2673 12.204L13.2811 11.2178L13.4157 11.0834C13.6876 10.8115 14.1301 10.8115 14.402 11.0834C14.6739 11.3553 14.6739 11.7977 14.4025 12.0692Z"></path></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" viewBox="0 0 16 18" fill="currentColor">
+                                            <path d="M5.12187 16.4582H2.78952C2.02045 16.4582 1.39476 15.8325 1.39476 15.0634V2.78952C1.39476 2.02045 2.02045 1.39476 2.78952 1.39476H11.3634C12.1325 1.39476 12.7582 2.02045 12.7582 2.78952V7.07841C12.7582 7.46357 13.0704 7.77579 13.4556 7.77579C13.8407 7.77579 14.1529 7.46357 14.1529 7.07841V2.78952C14.1529 1.25138 12.9016 0 11.3634 0H2.78952C1.25138 0 0 1.25138 0 2.78952V15.0634C0 16.6015 1.25138 17.8529 2.78952 17.8529H5.12187C5.50703 17.8529 5.81925 17.5407 5.81925 17.1555C5.81925 16.7704 5.50703 16.4582 5.12187 16.4582Z"></path>
+                                            <path d="M15.3882 10.0971C14.5724 9.28136 13.2452 9.28132 12.43 10.0965L8.60127 13.9168C8.51997 13.9979 8.45997 14.0979 8.42658 14.2078L7.59276 16.9528C7.55646 17.0723 7.55292 17.1993 7.58249 17.3207C7.61206 17.442 7.67367 17.5531 7.76087 17.6425C7.84807 17.7319 7.95768 17.7962 8.07823 17.8288C8.19879 17.8613 8.32587 17.8609 8.44621 17.8276L11.261 17.0479C11.3769 17.0158 11.4824 16.9543 11.5675 16.8694L15.3882 13.0559C16.2039 12.2401 16.2039 10.9129 15.3882 10.0971ZM10.712 15.7527L9.29586 16.145L9.71028 14.7806L12.2937 12.2029L13.2801 13.1893L10.712 15.7527ZM14.4025 12.0692L14.2673 12.204L13.2811 11.2178L13.4157 11.0834C13.6876 10.8115 14.1301 10.8115 14.402 11.0834C14.6739 11.3553 14.6739 11.7977 14.4025 12.0692Z"></path>
+                                        </svg>
                                     </div>
                                     <span>Add Order Note</span>
                                 </label>
@@ -2732,7 +2769,9 @@
                                 <div class="tf-mini-cart-tool-content">
                                     <div class="tf-mini-cart-tool-text">
                                         <div class="icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.65957 3.64545C4.65957 0.73868 7.89921 -0.995558 10.3176 0.617949L11.9997 1.74021L13.6818 0.617949C16.1001 -0.995558 19.3398 0.73868 19.3398 3.64545V4.32992H20.4286C21.9498 4.32992 23.1829 5.56311 23.1829 7.08416V9.10087C23.1829 9.61861 22.7632 10.0383 22.2454 10.0383H21.8528V20.2502C21.8528 20.254 21.8527 20.2577 21.8527 20.2614C21.8467 22.3272 20.1702 24 18.103 24H5.89634C3.82541 24 2.14658 22.3212 2.14658 20.2502V10.0384H1.75384C1.23611 10.0384 0.816406 9.61865 0.816406 9.10092V7.08421C0.816406 5.56304 2.04953 4.32992 3.57069 4.32992H4.65957V3.64545ZM6.53445 4.32992H11.0622V3.36863L9.27702 2.17757C8.10519 1.39573 6.53445 2.2357 6.53445 3.64545V4.32992ZM12.9371 3.36863V4.32992H17.4649V3.64545C17.4649 2.2357 15.8942 1.39573 14.7223 2.17756L12.9371 3.36863ZM3.57069 6.2048C3.08499 6.2048 2.69128 6.59851 2.69128 7.08421V8.16348H8.31067L8.3107 6.2048H3.57069ZM8.31071 10.0384V18.5741C8.31071 18.9075 8.48779 19.2158 8.77577 19.3838C9.06376 19.5518 9.4193 19.5542 9.70953 19.3901L11.9997 18.0953L14.2898 19.3901C14.58 19.5542 14.9356 19.5518 15.2236 19.3838C15.5115 19.2158 15.6886 18.9075 15.6886 18.5741V10.0383H19.9779V20.2137C19.9778 20.2169 19.9778 20.2201 19.9778 20.2233V20.2502C19.9778 21.2857 19.1384 22.1251 18.103 22.1251H5.89634C4.86088 22.1251 4.02146 21.2857 4.02146 20.2502V10.0384H8.31071ZM21.308 8.16344V7.08416C21.308 6.59854 20.9143 6.2048 20.4286 6.2048H15.6886V8.16344H21.308ZM13.8138 6.2048H10.1856V16.9672L11.5383 16.2024C11.8246 16.0405 12.1748 16.0405 12.461 16.2024L13.8138 16.9672V6.2048Z"></path></svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.65957 3.64545C4.65957 0.73868 7.89921 -0.995558 10.3176 0.617949L11.9997 1.74021L13.6818 0.617949C16.1001 -0.995558 19.3398 0.73868 19.3398 3.64545V4.32992H20.4286C21.9498 4.32992 23.1829 5.56311 23.1829 7.08416V9.10087C23.1829 9.61861 22.7632 10.0383 22.2454 10.0383H21.8528V20.2502C21.8528 20.254 21.8527 20.2577 21.8527 20.2614C21.8467 22.3272 20.1702 24 18.103 24H5.89634C3.82541 24 2.14658 22.3212 2.14658 20.2502V10.0384H1.75384C1.23611 10.0384 0.816406 9.61865 0.816406 9.10092V7.08421C0.816406 5.56304 2.04953 4.32992 3.57069 4.32992H4.65957V3.64545ZM6.53445 4.32992H11.0622V3.36863L9.27702 2.17757C8.10519 1.39573 6.53445 2.2357 6.53445 3.64545V4.32992ZM12.9371 3.36863V4.32992H17.4649V3.64545C17.4649 2.2357 15.8942 1.39573 14.7223 2.17756L12.9371 3.36863ZM3.57069 6.2048C3.08499 6.2048 2.69128 6.59851 2.69128 7.08421V8.16348H8.31067L8.3107 6.2048H3.57069ZM8.31071 10.0384V18.5741C8.31071 18.9075 8.48779 19.2158 8.77577 19.3838C9.06376 19.5518 9.4193 19.5542 9.70953 19.3901L11.9997 18.0953L14.2898 19.3901C14.58 19.5542 14.9356 19.5518 15.2236 19.3838C15.5115 19.2158 15.6886 18.9075 15.6886 18.5741V10.0383H19.9779V20.2137C19.9778 20.2169 19.9778 20.2201 19.9778 20.2233V20.2502C19.9778 21.2857 19.1384 22.1251 18.103 22.1251H5.89634C4.86088 22.1251 4.02146 21.2857 4.02146 20.2502V10.0384H8.31071ZM21.308 8.16344V7.08416C21.308 6.59854 20.9143 6.2048 20.4286 6.2048H15.6886V8.16344H21.308ZM13.8138 6.2048H10.1856V16.9672L11.5383 16.2024C11.8246 16.0405 12.1748 16.0405 12.461 16.2024L13.8138 16.9672V6.2048Z"></path>
+                                            </svg>
                                         </div>
                                         <div class="tf-gift-wrap-infos">
                                             <p>Do you want a gift wrap?</p>
@@ -2752,7 +2791,9 @@
                             <div class="tf-mini-cart-tool-content">
                                 <div class="tf-mini-cart-tool-text">
                                     <div class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="15" viewBox="0 0 21 15" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M0.441406 1.13155C0.441406 0.782753 0.724159 0.5 1.07295 0.5H12.4408C12.7896 0.5 13.0724 0.782753 13.0724 1.13155V2.91575H16.7859C18.8157 2.91575 20.5581 4.43473 20.5581 6.42296V11.8878C20.5581 12.2366 20.2753 12.5193 19.9265 12.5193H18.7542C18.4967 13.6534 17.4823 14.5 16.2703 14.5C15.0582 14.5 14.0439 13.6534 13.7864 12.5193H7.20445C6.94692 13.6534 5.93259 14.5 4.72054 14.5C3.50849 14.5 2.49417 13.6534 2.23664 12.5193H1.07295C0.724159 12.5193 0.441406 12.2366 0.441406 11.8878V1.13155ZM2.26988 11.2562C2.57292 10.1881 3.55537 9.40578 4.72054 9.40578C5.88572 9.40578 6.86817 10.1881 7.17121 11.2562H11.8093V1.76309H1.7045V11.2562H2.26988ZM13.0724 4.17884V6.68916H19.295V6.42296C19.295 5.2348 18.2252 4.17884 16.7859 4.17884H13.0724ZM19.295 7.95226H13.0724V11.2562H13.8196C14.1227 10.1881 15.1051 9.40578 16.2703 9.40578C17.4355 9.40578 18.4179 10.1881 18.7209 11.2562H19.295V7.95226ZM4.72054 10.6689C4.0114 10.6689 3.43652 11.2437 3.43652 11.9529C3.43652 12.662 4.0114 13.2369 4.72054 13.2369C5.42969 13.2369 6.00456 12.662 6.00456 11.9529C6.00456 11.2437 5.42969 10.6689 4.72054 10.6689ZM16.2703 10.6689C15.5611 10.6689 14.9863 11.2437 14.9863 11.9529C14.9863 12.662 15.5611 13.2369 16.2703 13.2369C16.9794 13.2369 17.5543 12.662 17.5543 11.9529C17.5543 11.2437 16.9794 10.6689 16.2703 10.6689Z"></path></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="15" viewBox="0 0 21 15" fill="currentColor">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.441406 1.13155C0.441406 0.782753 0.724159 0.5 1.07295 0.5H12.4408C12.7896 0.5 13.0724 0.782753 13.0724 1.13155V2.91575H16.7859C18.8157 2.91575 20.5581 4.43473 20.5581 6.42296V11.8878C20.5581 12.2366 20.2753 12.5193 19.9265 12.5193H18.7542C18.4967 13.6534 17.4823 14.5 16.2703 14.5C15.0582 14.5 14.0439 13.6534 13.7864 12.5193H7.20445C6.94692 13.6534 5.93259 14.5 4.72054 14.5C3.50849 14.5 2.49417 13.6534 2.23664 12.5193H1.07295C0.724159 12.5193 0.441406 12.2366 0.441406 11.8878V1.13155ZM2.26988 11.2562C2.57292 10.1881 3.55537 9.40578 4.72054 9.40578C5.88572 9.40578 6.86817 10.1881 7.17121 11.2562H11.8093V1.76309H1.7045V11.2562H2.26988ZM13.0724 4.17884V6.68916H19.295V6.42296C19.295 5.2348 18.2252 4.17884 16.7859 4.17884H13.0724ZM19.295 7.95226H13.0724V11.2562H13.8196C14.1227 10.1881 15.1051 9.40578 16.2703 9.40578C17.4355 9.40578 18.4179 10.1881 18.7209 11.2562H19.295V7.95226ZM4.72054 10.6689C4.0114 10.6689 3.43652 11.2437 3.43652 11.9529C3.43652 12.662 4.0114 13.2369 4.72054 13.2369C5.42969 13.2369 6.00456 12.662 6.00456 11.9529C6.00456 11.2437 5.42969 10.6689 4.72054 10.6689ZM16.2703 10.6689C15.5611 10.6689 14.9863 11.2437 14.9863 11.9529C14.9863 12.662 15.5611 13.2369 16.2703 13.2369C16.9794 13.2369 17.5543 12.662 17.5543 11.9529C17.5543 11.2437 16.9794 10.6689 16.2703 10.6689Z"></path>
+                                        </svg>
                                     </div>
                                     <span class="fw-6">Estimate Shipping</span>
                                 </div>
@@ -2859,10 +2900,10 @@
                     </div>
                 </div>
             </div>
-        </div>       
+        </div>
     </div>
     <!-- /modal compare -->
-    
+
     <!-- modal quick_add -->
     <div class="modal fade modalDemo" id="quick_add">
         <div class="modal-dialog modal-dialog-centered">
@@ -2973,7 +3014,7 @@
                 <div class="wrap">
                     <div class="tf-product-media-wrap">
                         <div class="swiper tf-single-slide">
-                            <div class="swiper-wrapper" >
+                            <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="item">
                                         <img src="images/products/orange-1.jpg" alt="">
@@ -3215,33 +3256,40 @@
     <style>
         .dropdown-menu {
             border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             border: 1px solid #e5e5e5;
         }
+
         .dropdown-header {
             padding: 12px 16px;
             background-color: #f8f9fa;
             border-radius: 8px 8px 0 0;
         }
+
         .dropdown-item {
             padding: 8px 16px;
             transition: all 0.2s ease;
         }
+
         .dropdown-item:hover {
             background-color: #f8f9fa;
             transform: translateX(2px);
         }
+
         .dropdown-item.text-danger:hover {
             background-color: #f8d7da;
             color: #dc3545 !important;
         }
+
         .dropdown-toggle::after {
             display: none;
         }
+
         .nav-account .dropdown-toggle {
             display: flex;
             align-items: center;
         }
+
         @media (max-width: 768px) {
             .dropdown-menu {
                 min-width: 180px !important;
@@ -3264,4 +3312,5 @@
 
 
 <!-- Mirrored from themesflat.co/html/ecomus/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 08 Sep 2024 08:50:02 GMT -->
+
 </html>

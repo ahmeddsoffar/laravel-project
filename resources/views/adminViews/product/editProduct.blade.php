@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="en" data-bs-theme="light">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Metoxi | Add Product</title>
+    <title>Ecomus| Edit Product</title>
     <!--favicon-->
     <link rel="icon" href="{{ asset('adminFront/assets/images/favicon-32x32.png') }}" type="image/png">
     <!--plugins-->
@@ -23,6 +24,7 @@
     <link href="{{ asset('adminFront/sass/bordered-theme.css') }}" rel="stylesheet">
     <link href="{{ asset('adminFront/sass/responsive.css') }}" rel="stylesheet">
 </head>
+
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
     <!--start header-->
     @include('adminViews.layouts.header')
@@ -40,7 +42,8 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0 p-0">
                             <li class="breadcrumb-item"><a href="{{ route('adminView') }}"><i class="bx bx-home-alt"></i></a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Add Product</li>
+                            <li class="breadcrumb-item"><a href="{{ route('product.list') }}">Products</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Edit Product</li>
                         </ol>
                     </nav>
                 </div>
@@ -50,54 +53,66 @@
                 <div class="col-12 col-lg-8 col-xl-6">
                     <div class="card">
                         <div class="card-header px-4 py-3">
-                            <h5 class="mb-0">Add New Product</h5>
+                            <h5 class="mb-0">Edit Product</h5>
                         </div>
                         <div class="card-body p-4">
-                            @if(session('success'))
-                                <div class="alert alert-success border-0 bg-light-success alert-dismissible fade show">
-                                    <div class="text-success">{{ session('success') }}</div>
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
+                            @if (
+                            $errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach (
+                                    $errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
                             @endif
-                            <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
+                            @if(session('success'))
+                            <div class="alert alert-success border-0 bg-light-success alert-dismissible fade show">
+                                <div class="text-success">{{ session('success') }}</div>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            @endif
+                            <form method="POST" action="{{ route('product.update', $product->id) }}" enctype="multipart/form-data">
                                 @csrf
+                                @method('PUT')
                                 <div class="row mb-3">
                                     <label for="name" class="col-sm-3 col-form-label">Product Name</label>
                                     <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="name" name="name" required>
+                                        <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $product->name) }}" required>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="description" class="col-sm-3 col-form-label">Description</label>
                                     <div class="col-sm-9">
-                                        <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                                        <textarea class="form-control" id="description" name="description" rows="3" required>{{ old('description', $product->description) }}</textarea>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="price" class="col-sm-3 col-form-label">Price</label>
                                     <div class="col-sm-9">
-                                        <input type="number" class="form-control" id="price" name="price" step="0.01" required>
+                                        <input type="number" class="form-control" id="price" name="price" step="0.01" value="{{ old('price', $product->price) }}" required>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="quantity" class="col-sm-3 col-form-label">Quantity</label>
                                     <div class="col-sm-9">
-                                        <input type="number" class="form-control" id="quantity" name="quantity" min="0" required>
+                                        <input type="number" class="form-control" id="quantity" name="quantity" min="0" value="{{ old('quantity', $product->quantity) }}" required>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="discount" class="col-sm-3 col-form-label">Discount (%)</label>
                                     <div class="col-sm-9">
-                                        <input type="number" class="form-control" id="discount" name="discount" step="0.01" min="0" max="100">
+                                        <input type="number" class="form-control" id="discount" name="discount" step="0.01" min="0" max="100" value="{{ old('discount', $product->discount) }}">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="category" class="col-sm-3 col-form-label">Category</label>
                                     <div class="col-sm-9">
                                         <select class="form-select" id="category" name="category" required>
-                                            <option value="" disabled selected>Select a category</option>
+                                            <option value="" disabled>Select a category</option>
                                             @foreach($categories as $category)
-                                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                <option value="{{ $category->id }}" {{ old('category', $product->category_id) == $category->id ? 'selected' : '' }}>{{ $category->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -106,14 +121,19 @@
                                     <label for="image" class="col-sm-3 col-form-label">Product Image</label>
                                     <div class="col-sm-9">
                                         <input type="file" class="form-control" id="image" name="image">
+                                        @if($product->image)
+                                        <div class="mt-2">
+                                            <img src="{{ asset('storage/' . $product->image) }}" alt="Product Image" width="80">
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="row">
                                     <label class="col-sm-3 col-form-label"></label>
                                     <div class="col-sm-9">
                                         <div class="d-md-flex d-grid align-items-center gap-3">
-                                            <button type="submit" class="btn btn-primary px-4">Add Product</button>
-                                            <a href="{{ route('product.list') }}" class="btn btn-outline-secondary px-4">View All Products</a>
+                                            <button type="submit" class="btn btn-primary px-4">Update Product</button>
+                                            <a href="{{ route('product.list') }}" class="btn btn-outline-secondary px-4">Cancel</a>
                                         </div>
                                     </div>
                                 </div>
@@ -153,4 +173,5 @@
     <script src="{{ asset('adminFront/assets/plugins/simplebar/js/simplebar.min.js') }}"></script>
     <script src="{{ asset('adminFront/assets/js/main.js') }}"></script>
 </body>
+
 </html>

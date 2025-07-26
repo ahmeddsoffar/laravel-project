@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Metoxi | Edit Category</title>
+    <title>Ecomus | Edit Category</title>
     <!--favicon-->
     <link rel="icon" href="{{ asset('adminFront/assets/images/favicon-32x32.png') }}" type="image/png">
 
@@ -61,7 +61,7 @@
                             <h5 class="mb-0">Edit Category</h5>
                         </div>
                         <div class="card-body p-4">
-                            
+
                             @if(session('success'))
                                 <div class="alert alert-success border-0 bg-light-success alert-dismissible fade show">
                                     <div class="text-success">{{ session('success') }}</div>
@@ -72,7 +72,7 @@
                             <form method="POST" action="{{ route('category.update', $category->id) }}">
                                 @csrf
                                 @method('PUT')
-                                
+
                                 <div class="row mb-3">
                                     <label for="category_name" class="col-sm-3 col-form-label">Category Name</label>
                                     <div class="col-sm-9">
@@ -82,7 +82,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                
+
                                 <div class="row">
                                     <label class="col-sm-3 col-form-label"></label>
                                     <div class="col-sm-9">
@@ -93,7 +93,7 @@
                                     </div>
                                 </div>
                             </form>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -137,4 +137,4 @@
 
 </body>
 
-</html> 
+</html>
