@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserControllers\ClientController;
 
 
@@ -34,6 +35,16 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('category/{id}/editCategory', [CategoryController::class, 'editCategory'])->name('category.edit');
     Route::put('category/{id}/updateCategory', [CategoryController::class, 'updateCategory'])->name('category.update');
     Route::delete('category/{id}/deleteCategory', [CategoryController::class, 'deleteCategory'])->name('category.delete');
+
+    ############################################ Order Routes ############################################
+
+    // Order routes
+    Route::get('order/listOrders', [OrderController::class, 'index'])->name('order.list');
+    Route::get('order/create', [OrderController::class, 'viewOrder'])->name('order.create');
+    Route::post('order/store', [OrderController::class, 'store'])->name('order.store');
+    Route::get('order/{order}/edit', [OrderController::class, 'editOrder'])->name('order.edit');
+    Route::put('order/{order}/update', [OrderController::class, 'updateOrder'])->name('order.update');
+    Route::delete('order/{order}', [OrderController::class, 'destroy'])->name('order.destroy');
 });
 
 
