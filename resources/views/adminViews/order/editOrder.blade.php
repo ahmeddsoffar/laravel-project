@@ -44,7 +44,7 @@
 
     <!--start main wrapper-->
     <main class="main-wrapper" style="flex: 1;">
-        <div class="main-content">
+        <div class="main-content" data-item-count="{{ count($order->items) }}">
             <!--breadcrumb-->
             <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
                 <div class="breadcrumb-title pe-3">Order Management</div>
@@ -232,9 +232,48 @@
     </div>
 
     @push('scripts')
+    @endpush
+
+
+    <!--start overlay-->
+    <div class="overlay btn-toggle"></div>
+    <!--end overlay-->
+
+    <!--start footer-->
+    @include('adminViews.layouts.footer')
+    <!--top footer-->
+
+    <!--start cart-->
+    @include('adminViews.layouts.cart')
+    <!--end cart-->
+
+    <!--start switcher-->
+    @include('adminViews/layouts/switcher')
+    <!--end switcher-->
+
+    <!--bootstrap js-->
+    <script src="{{ asset('adminFront/assets/js/bootstrap.bundle.min.js') }}"></script>
+
+    <!--plugins-->
+    <script src="{{ asset('adminFront/assets/js/jquery.min.js') }}"></script>
+    <!--plugins-->
+    <script src="{{ asset('adminFront/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
+    <script src="{{ asset('adminFront/assets/plugins/metismenu/metisMenu.min.js') }}"></script>
+    <script src="{{ asset('adminFront/assets/plugins/apexchart/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('adminFront/assets/js/index.js') }}"></script>
+    <script src="{{ asset('adminFront/assets/plugins/peity/jquery.peity.min.js') }}"></script>
     <script>
+        $(".data-attributes span").peity("donut")
+    </script>
+    <script src="{{ asset('adminFront/assets/plugins/simplebar/js/simplebar.min.js') }}"></script>
+    <script src="{{ asset('adminFront/assets/js/main.js') }}"></script>
+
+    <script>
+        // Safely get the initial item count from HTML
+        const initialItemCount = parseInt(document.querySelector('.main-content').dataset.itemCount) || 0;
+
         document.addEventListener('DOMContentLoaded', function() {
-            let itemCount = {{ count($order->items) }};
+            let itemCount = initialItemCount;
 
             // Initial calculation
             calculateTotals();
@@ -359,49 +398,14 @@
                 document.getElementById('totalPriceInput').value = totalAmount.toFixed(2);
             }
         });
+    </script>
 
+    <script>
         function confirmDelete() {
-            var deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+            const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
             deleteModal.show();
         }
     </script>
-    @endpush
-
-
-    <!--start overlay-->
-    <div class="overlay btn-toggle"></div>
-    <!--end overlay-->
-
-    <!--start footer-->
-    @include('adminViews.layouts.footer')
-    <!--top footer-->
-
-    <!--start cart-->
-    @include('adminViews.layouts.cart')
-    <!--end cart-->
-
-    <!--start switcher-->
-    @include('adminViews.layouts.switcher')
-    <!--end switcher-->
-
-
-    <!--bootstrap js-->
-    <script src="{{ asset('adminFront/assets/js/bootstrap.bundle.min.js') }}"></script>
-
-    <!--plugins-->
-    <script src="{{ asset('adminFront/assets/js/jquery.min.js') }}"></script>
-    <!--plugins-->
-    <script src="{{ asset('adminFront/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
-    <script src="{{ asset('adminFront/assets/plugins/metismenu/metisMenu.min.js') }}"></script>
-    <script src="{{ asset('adminFront/assets/plugins/apexchart/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('adminFront/assets/js/index.js') }}"></script>
-    <script src="{{ asset('adminFront/assets/plugins/peity/jquery.peity.min.js') }}"></script>
-    <script>
-        $(".data-attributes span").peity("donut")
-    </script>
-    <script src="{{ asset('adminFront/assets/plugins/simplebar/js/simplebar.min.js') }}"></script>
-    <script src="{{ asset('adminFront/assets/js/main.js') }}"></script>
-
 
 </body>
 

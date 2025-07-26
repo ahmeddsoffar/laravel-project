@@ -98,10 +98,10 @@
                                     </td>
                                     <td>{{ $order->created_at->format('M d, Y H:i') }}</td>
                                     <td>
-                                        <a href="{{ route('order.edit', $order->id) }}" class="btn btn-sm btn-outline-primary">
+                                        <a href="{{ route('order.edit', ['order' => $order->id]) }}" class="btn btn-sm btn-outline-primary">
                                             Order Details
                                         </a>
-                                        <form action="{{ route('order.destroy', $order->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this order?');">
+                                        <form action="{{ route('order.destroy', ['order' => $order->id]) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this order?');">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-outline-danger">
