@@ -1,11 +1,11 @@
 <aside class="sidebar-wrapper">
     <div class="sidebar-header">
         <div class="logo-icon">
-            <img src="{{ asset('adminFront/assets/images/logo-icon.png') }}   " class="logo-img" alt="">
+            <img src="{{ asset('clientFront/assets/images/logo/logo.svg') }}" class="logo" alt="">
         </div>
-        <div class="logo-name flex-grow-1">
+        <!-- <div class="logo-name flex-grow-1">
             <h5 class="mb-0">Metoxi</h5>
-        </div>
+        </div> -->
         <div class="sidebar-close">
             <span class="material-icons-outlined">close</span>
         </div>
@@ -41,10 +41,10 @@
                 </ul>
             </li>
             <li class="menu-label">UI Elements</li>
-            
 
-           
-            
+
+
+
             <!-- Category Management Section -->
             <li>
                 <a href="javascript:;" class="has-arrow">
@@ -59,7 +59,7 @@
                     </li>
                 </ul>
             </li>
-            
+
             <!-- Product Management Section -->
             <li>
                 <a href="javascript:;" class="has-arrow">
@@ -74,7 +74,7 @@
                     </li>
                 </ul>
             </li>
-            
+
             <li class="menu-label">Forms & Tables</li>
             <li>
                 <a class="has-arrow" href="javascript:;">
