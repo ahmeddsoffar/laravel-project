@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Metoxi | Categories List</title>
+    <title>Ecomus | Categories List</title>
     <!--favicon-->
     <link rel="icon" href="{{ asset('adminFront/assets/images/favicon-32x32.png') }}" type="image/png">
 
@@ -63,7 +63,7 @@
                             </a>
                         </div>
                         <div class="card-body p-4">
-                            
+
                             @if(session('success'))
                                 <div class="alert alert-success border-0 bg-light-success alert-dismissible fade show">
                                     <div class="text-success">{{ session('success') }}</div>
@@ -93,8 +93,8 @@
                                                             <a href="{{ route('category.edit', ['id' => $category->id]) }}" class="btn btn-sm btn-outline-primary">
                                                                 <i class="material-icons-outlined">edit</i>
                                                             </a>
-                                                            <a href="{{ route('category.delete', $category->id) }}" 
-                                                               onclick="return confirm('Are you sure you want to delete this category?')" 
+                                                            <a href="{{ route('category.delete', $category->id) }}"
+                                                               onclick="return confirm('Are you sure you want to delete this category?')"
                                                                class="btn btn-sm btn-outline-danger">
                                                                 <i class="material-icons-outlined">delete</i>
                                                             </a>
@@ -117,7 +117,7 @@
                                     </a>
                                 </div>
                             @endif
-                            
+
                         </div>
                     </div>
                 </div>

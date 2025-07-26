@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Metoxi | Bootstrap 5 Admin Dashboard Template</title>
+    <title>Ecomus | Create Category</title>
     <!--favicon-->
     <link rel="icon" href="{{ asset('adminFront/assets/images/favicon-32x32.png') }}" type="image/png">
 
@@ -66,12 +66,12 @@
                             <h5 class="mb-0">Create New Category</h5>
                         </div>
                         <div class="card-body p-4">
-                            
+
                             @if(session('success'))
-                                <div class="alert alert-success border-0 bg-light-success alert-dismissible fade show">
-                                    <div class="text-success">{{ session('success') }}</div>
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                                </div>
+                            <div class="alert alert-success border-0 bg-light-success alert-dismissible fade show">
+                                <div class="text-success">{{ session('success') }}</div>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
                             @endif
 
                             <form method="POST" action="{{ route('category.store') }}">
@@ -81,22 +81,22 @@
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" id="category_name" name="name" placeholder="Enter category name">
                                         @error('name')
-                                            <div class="text-danger small mt-1">{{ $message }}</div>
+                                        <div class="text-danger small mt-1">{{ $message }}</div>
                                         @enderror
                                     </div>
                                 </div>
-                                
+
                                 <div class="row">
                                     <label class="col-sm-3 col-form-label"></label>
                                     <div class="col-sm-9">
-                                                                                 <div class="d-md-flex d-grid align-items-center gap-3">
-                                             <button type="submit" class="btn btn-primary px-4">Create Category</button>
-                                             <a href="{{ route('category.list') }}" class="btn btn-outline-secondary px-4">View All Categories</a>
-                                         </div>
+                                        <div class="d-md-flex d-grid align-items-center gap-3">
+                                            <button type="submit" class="btn btn-primary px-4">Create Category</button>
+                                            <a href="{{ route('category.list') }}" class="btn btn-outline-secondary px-4">View All Categories</a>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
-                            
+
                         </div>
                     </div>
                 </div>

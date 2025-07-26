@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Metoxi | Add Product</title>
+    <title>Ecomus | Add Product</title>
     <!--favicon-->
     <link rel="icon" href="{{ asset('adminFront/assets/images/favicon-32x32.png') }}" type="image/png">
     <!--plugins-->
