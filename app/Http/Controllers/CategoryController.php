@@ -10,7 +10,7 @@ class CategoryController extends Controller
 
     public function viewCategory()
     {
-        return view("adminViews.createCategory");
+        return view("adminViews.category.createCategory");
     }
     public function storeCategory()
     {
@@ -27,29 +27,29 @@ class CategoryController extends Controller
     public function listCategories()
     {
         $categories = Category::all();
-        return view("adminViews.listCategories", compact('categories'));
+        return view("adminViews.category.listCategories", compact('categories'));
     }
 
-   
+
     public function editCategory($id)
     {
         $category = Category::findOrFail($id);
-        return view("adminViews.editCategory", compact('category'));
+        return view("adminViews.category.editCategory", compact('category'));
     }
 
     public function updateCategory($id)
     {
         $category = Category::findOrFail($id);
         $category->update(['name'=>request('name')]);
-        return redirect()->route('adminViews.listCategories')->with('success', 'Category updated successfully!');
+        return redirect()->route('adminViews.category.listCategories')->with('success', 'Category updated successfully!');
     }
-    
+
     public function deleteCategory($id)
     {
         $category = Category::findOrFail($id);
         $category->delete();
-        return redirect()->route('adminViews.listCategories')->with('success', 'Category deleted successfully!');
+        return redirect()->route('adminViews.category.listCategories')->with('success', 'Category deleted successfully!');
     }
 
-    
+
 }
