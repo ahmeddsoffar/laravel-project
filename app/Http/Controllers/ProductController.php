@@ -47,21 +47,22 @@ class ProductController extends Controller
             'image' => $imagePath,
         ]);
 
-        return redirect()->route('product.list')->with('success','Product added successfully');
+        return redirect()->route('product.list')->with('success', 'Product added successfully');
     }
 
-    public function listProducts(){
+    public function listProducts()
+    {
         $products = Product::all();
         //$categories = Category::all();
-        return view('adminViews.listProducts',compact('products'));
+        return view('adminViews.listProducts', compact('products'));
     }
-   
+
     public function editProduct($id)
     {
         $product = Product::findOrFail($id);
         $categories = Category::all();
         return view('adminViews.editProduct', compact('product', 'categories'));
-    }   
+    }
 
     public function updateProduct($id)
     {
