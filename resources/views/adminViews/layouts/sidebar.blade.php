@@ -75,6 +75,21 @@
                 </ul>
             </li>
 
+            <!-- Order Management Section -->
+            <li>
+                <a href="javascript:;" class="has-arrow">
+                    <div class="parent-icon"><i class="material-icons-outlined">shopping_cart</i>
+                    </div>
+                    <div class="menu-title">Order</div>
+                </a>
+                <ul>
+                    <li><a href="{{ route('order.create') }}"><i class="material-icons-outlined">arrow_right</i>Create Order</a>
+                    </li>
+                    <li><a href="{{ route('order.list') }}"><i class="material-icons-outlined">arrow_right</i>Show All Orders</a>
+                    </li>
+                </ul>
+            </li>
+
             <li class="menu-label">Forms & Tables</li>
             <li>
                 <a class="has-arrow" href="javascript:;">
