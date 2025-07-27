@@ -6,6 +6,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserControllers\ClientController;
 
 
@@ -13,6 +14,15 @@ use App\Http\Controllers\UserControllers\ClientController;
 // Client route (public homepage)
 Route::get('/', [ClientController::class, 'viewClient'])->name('clientView');
 //missinge get for produt in the client page
+
+############################################ Cart Routes ############################################
+
+// Cart operations (require authentication for add/checkout, public for get)
+Route::post('/cart/add', [CartController::class, 'addToCart'])->name('cart.add');
+Route::get('/cart', [CartController::class, 'getCart'])->name('cart.get');
+Route::delete('/cart/remove', [CartController::class, 'removeFromCart'])->name('cart.remove');
+Route::put('/cart/update', [CartController::class, 'updateQuantity'])->name('cart.update');
+Route::post('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
 
 Route::middleware(['auth', 'admin'])->group(function () {
     // Admin route (protected)

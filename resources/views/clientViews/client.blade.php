@@ -11,6 +11,7 @@
 
     <meta name="author" content="themesflat.com">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- font -->
     <link rel="stylesheet" href="{{ asset('clientFront/assets/fonts/fonts.css') }}">
@@ -383,7 +384,18 @@
                                                                                 @endif
                                                                             </a>
                                                                             <div class="list-product-btn absolute-2">
-                                                                                <a href="#quick_add" data-bs-toggle="modal" class="box-icon bg_white quick-add tf-btn-loading">
+                                                                                                                @if($product->quantity > 0)
+                                <a href="#quick_add" data-bs-toggle="modal" class="box-icon bg_white quick-add tf-btn-loading"
+                                   data-product-id="{{ $product->id }}" 
+                                   data-product-name="{{ $product->name }}" 
+                                   data-product-price="{{ $product->discount > 0 ? $product->price - ($product->price * $product->discount / 100) : $product->price }}" 
+                                   data-product-original-price="{{ $product->price }}"
+                                   data-product-discount="{{ $product->discount }}"
+                                   data-product-stock="{{ $product->quantity }}"
+                                   data-product-image="{{ $product->image ? asset('storage/' . $product->image) : asset('clientFront/assets/images/products/orange-1.jpg') }}">
+                                @else
+                                <a href="#" class="box-icon bg_gray quick-add-disabled" style="background: #ccc; cursor: not-allowed; opacity: 0.6;">
+                                @endif
                                                                                     <span class="icon icon-bag"></span>
                                                                                     <span class="tooltip">Quick Add</span>
                                                                                 </a>
@@ -406,8 +418,9 @@
                                                                         <div class="card-product-info">
                                                                             <a href="#" class="title link">{{ $product->name }}</a>
                                                                             @if($product->discount > 0)
-                                                                            <div class="price-sale">${{ number_format($product->price - ($product->price * $product->discount / 100), 2) }}</div>
-                                                                            <div class="compare-at-price">${{ number_format($product->price, 2) }}</div>
+                                                                            <div class="price-sale" style="color: #ff6b6b; font-weight: bold; font-size: 1.1em;">${{ number_format($product->price - ($product->price * $product->discount / 100), 2) }}</div>
+                                                                            <div class="compare-at-price" style="text-decoration: line-through; color: #999; font-size: 0.9em;">${{ number_format($product->price, 2) }}</div>
+                                                                            <small style="background: #ff6b6b; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.8em;">{{ $product->discount }}% OFF</small>
                                                                             @else
                                                                             <span class="price">${{ number_format($product->price, 2) }}</span>
                                                                             @endif
@@ -815,7 +828,18 @@
                                 @endif
                             </a>
                             <div class="list-product-btn">
-                                <a href="#quick_add" data-bs-toggle="modal" class="box-icon bg_white quick-add tf-btn-loading">
+                                @if($product->quantity > 0)
+                                <a href="#quick_add" data-bs-toggle="modal" class="box-icon bg_white quick-add tf-btn-loading" 
+                                   data-product-id="{{ $product->id }}" 
+                                   data-product-name="{{ $product->name }}" 
+                                   data-product-price="{{ $product->discount > 0 ? $product->price - ($product->price * $product->discount / 100) : $product->price }}" 
+                                   data-product-original-price="{{ $product->price }}"
+                                   data-product-discount="{{ $product->discount }}"
+                                   data-product-stock="{{ $product->quantity }}"
+                                   data-product-image="{{ $product->image ? asset('storage/' . $product->image) : asset('clientFront/assets/images/products/orange-1.jpg') }}">
+                                @else
+                                <a href="#" class="box-icon bg_gray quick-add-disabled" style="background: #ccc; cursor: not-allowed; opacity: 0.6;">
+                                @endif
                                     <span class="icon icon-bag"></span>
                                     <span class="tooltip">Quick Add</span>
                                 </a>
@@ -850,8 +874,9 @@
                             <a href="product-detail.html" class="title link">{{ $product->name }}</a>
                             <div class="price-wrap">
                                 @if($product->discount > 0)
-                                <div class="price-sale">${{ number_format($product->price - ($product->price * $product->discount / 100), 2) }}</div>
-                                <div class="compare-at-price">${{ number_format($product->price, 2) }}</div>
+                                <div class="price-sale" style="color: #ff6b6b; font-weight: bold; font-size: 1.1em;">${{ number_format($product->price - ($product->price * $product->discount / 100), 2) }}</div>
+                                <div class="compare-at-price" style="text-decoration: line-through; color: #999; font-size: 0.9em;">${{ number_format($product->price, 2) }}</div>
+                                <small style="background: #ff6b6b; color: white; padding: 2px 6px; border-radius: 3px; font-size: 0.8em;">{{ $product->discount }}% OFF</small>
                                 @else
                                 <span class="price">${{ number_format($product->price, 2) }}</span>
                                 @endif
@@ -2614,88 +2639,13 @@
                             <div class="tf-mini-cart-sroll">
                                 <div class="tf-mini-cart-items">
                                     <div class="tf-mini-cart-item">
-                                        <div class="tf-mini-cart-image">
-                                            <a href="product-detail.html">
-                                                <img src="{{ asset('clientFront/assets/images/products/white-2.jpg') }}" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="tf-mini-cart-info">
-                                            <a class="title link" href="product-detail.html">T-shirt</a>
-                                            <div class="meta-variant">Light gray</div>
-                                            <div class="price fw-6">$25.00</div>
-                                            <div class="tf-mini-cart-btns">
-                                                <div class="wg-quantity small">
-                                                    <span class="btn-quantity minus-btn">-</span>
-                                                    <input type="text" name="number" value="1">
-                                                    <span class="btn-quantity plus-btn">+</span>
-                                                </div>
-                                                <div class="tf-mini-cart-remove">Remove</div>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
-                                    <div class="tf-mini-cart-item">
-                                        <div class="tf-mini-cart-image">
-                                            <a href="product-detail.html">
-                                                <img src="{{ asset('clientFront/assets/images/products/white-3.jpg') }}" alt="">
-                                            </a>
-                                        </div>
-                                        <div class="tf-mini-cart-info">
-                                            <a class="title link" href="product-detail.html">Oversized Motif T-shirt</a>
-                                            <div class="price fw-6">$25.00</div>
-                                            <div class="tf-mini-cart-btns">
-                                                <div class="wg-quantity small">
-                                                    <span class="btn-quantity minus-btn">-</span>
-                                                    <input type="text" name="number" value="1">
-                                                    <span class="btn-quantity plus-btn">+</span>
-                                                </div>
-                                                <div class="tf-mini-cart-remove">Remove</div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                                 <div class="tf-minicart-recommendations">
-                                    <div class="tf-minicart-recommendations-heading">
-                                        <div class="tf-minicart-recommendations-title">You may also like</div>
-                                        <div class="sw-dots small style-2 cart-slide-pagination"></div>
-                                    </div>
-                                    <div class="swiper tf-cart-slide">
-                                        <div class="swiper-wrapper">
-                                            <div class="swiper-slide">
-                                                <div class="tf-minicart-recommendations-item">
-                                                    <div class="tf-minicart-recommendations-item-image">
-                                                        <a href="product-detail.html">
-                                                            <img src="{{ asset('clientFront/assets/images/products/white-3.jpg') }}" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="tf-minicart-recommendations-item-infos flex-grow-1">
-                                                        <a class="title" href="product-detail.html">Loose Fit Sweatshirt</a>
-                                                        <div class="price">$25.00</div>
-                                                    </div>
-                                                    <div class="tf-minicart-recommendations-item-quickview">
-                                                        <div class="btn-show-quickview quickview hover-tooltip">
-                                                            <span class="icon icon-view"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="swiper-slide">
-                                                <div class="tf-minicart-recommendations-item">
-                                                    <div class="tf-minicart-recommendations-item-image">
-                                                        <a href="product-detail.html">
-                                                            <img src="{{ asset('clientFront/assets/images/products/white-2.jpg') }}         " alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="tf-minicart-recommendations-item-infos flex-grow-1">
-                                                        <a class="title" href="product-detail.html">Loose Fit Hoodie</a>
-                                                        <div class="price">$25.00</div>
-                                                    </div>
-                                                    <div class="tf-minicart-recommendations-item-quickview">
-                                                        <div class="btn-show-quickview quickview hover-tooltip">
-                                                            <span class="icon icon-view"></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -2740,8 +2690,8 @@
                                     </label>
                                 </div>
                                 <div class="tf-mini-cart-view-checkout">
-                                    <a href="view-cart.html" class="tf-btn btn-outline radius-3 link w-100 justify-content-center">View cart</a>
-                                    <a href="checkout.html" class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center"><span>Check out</span></a>
+                                    <a href="#" class="tf-btn btn-outline radius-3 link w-100 justify-content-center">View cart</a>
+                                    <a href="#" class="tf-btn btn-fill animate-hover-btn radius-3 w-100 justify-content-center checkout-btn"><span>Check out</span></a>
                                 </div>
                             </div>
                         </div>
@@ -2919,9 +2869,9 @@
                         <div class="content">
                             <a href="product-detail.html">Ribbed Tank Top</a>
                             <div class="tf-product-info-price">
-                                <!-- <div class="price-on-sale">$8.00</div>
-                                <div class="compare-at-price">$10.00</div>
-                                <div class="badges-on-sale"><span>20</span>% OFF</div> -->
+                                <div class="price-on-sale" style="display: none;">$18.00</div>
+                                <div class="compare-at-price" style="display: none;">$18.00</div>
+                                <div class="badges-on-sale" style="display: none;"><span>0</span>% OFF</div>
                                 <div class="price">$18.00</div>
                             </div>
                         </div>
@@ -2982,8 +2932,9 @@
                         </div>
                     </div>
                     <div class="tf-product-info-buy-button">
-                        <form>
-                            <a class="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn btn-add-to-cart"><span>Add to cart -&nbsp;</span><span class="tf-qty-price">$18.00</span></a>
+                        <form id="quick-add-form">
+                            <input type="hidden" id="quick-add-product-id" value="">
+                            <a class="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn btn-add-to-cart" id="quick-add-to-cart"><span>Add to cart -&nbsp;</span><span class="tf-qty-price">$18.00</span></a>
                             <div class="tf-product-btn-wishlist btn-icon-action">
                                 <i class="icon-heart"></i>
                                 <i class="icon-delete"></i>
@@ -2993,7 +2944,7 @@
                                 <span class="icon icon-check"></span>
                             </a>
                             <div class="w-100">
-                                <a href="#" class="btns-full">Buy with <img src="images/payments/paypal.png" alt=""></a>
+                                <a href="#" class="btns-full">Buy with <img src="{{ asset('clientFront/assets/images/payments/paypal.png') }}" alt=""></a>
                                 <a href="#" class="payment-more-option">More payment options</a>
                             </div>
                         </form>
@@ -3308,6 +3259,452 @@
     <script type="text/javascript" src="{{ asset('clientFront/assets/js/wow.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('clientFront/assets/js/multiple-modal.js') }}"></script>
     <script type="text/javascript" src="{{ asset('clientFront/assets/js/main.js') }}"></script>
+    
+    <!-- Cart functionality -->
+    <script>
+        $(document).ready(function() {
+            // CSRF token setup for AJAX
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            // Load cart count on page load
+            loadCartCount();
+
+            // Handle quick add button clicks to populate modal
+            $('.quick-add').on('click', function(e) {
+                var productId = $(this).data('product-id');
+                var productName = $(this).data('product-name');
+                var productPrice = $(this).data('product-price');
+                var originalPrice = $(this).data('product-original-price');
+                var discount = $(this).data('product-discount');
+                var productImage = $(this).data('product-image');
+                var productStock = $(this).data('product-stock');
+
+                if (productId) {
+                    // Populate modal with product data
+                    $('#quick-add-product-id').val(productId);
+                    $('#quick_add .tf-product-info-item .content a').text(productName);
+                    $('#quick_add .tf-product-info-item .image img').attr('src', productImage).attr('alt', productName);
+                    
+                    // Handle discount display
+                    if (discount > 0) {
+                        // Show discounted price
+                        $('#quick_add .price-on-sale').text('$' + parseFloat(productPrice).toFixed(2)).show();
+                        $('#quick_add .compare-at-price').text('$' + parseFloat(originalPrice).toFixed(2)).show();
+                        $('#quick_add .badges-on-sale span').text(discount);
+                        $('#quick_add .badges-on-sale').show();
+                        $('#quick_add .price').hide();
+                    } else {
+                        // Show regular price
+                        $('#quick_add .price-on-sale').hide();
+                        $('#quick_add .compare-at-price').hide();
+                        $('#quick_add .badges-on-sale').hide();
+                        $('#quick_add .price').text('$' + parseFloat(productPrice).toFixed(2)).show();
+                    }
+                    
+                    $('.tf-qty-price').text('$' + parseFloat(productPrice).toFixed(2));
+                    
+                    // Set quantity limits based on stock
+                    var maxStock = productStock || 999;
+                    $('#quick_add input[name="number"]').attr('max', maxStock).val(1);
+                    
+                    // Show stock information
+                    if (maxStock <= 5) {
+                        $('.stock-warning').remove();
+                        $('#quick_add .tf-product-info-quantity').append('<div class="stock-warning" style="color: #ff6b6b; font-size: 0.9em; margin-top: 5px;">Only ' + maxStock + ' left in stock!</div>');
+                    } else {
+                        $('.stock-warning').remove();
+                    }
+                    
+                    // Reset size and color to first options
+                    $('#quick_add input[name="color"]:first').prop('checked', true);
+                    $('#quick_add input[name="size"]:first').prop('checked', true);
+                    
+                    // Update variant label values
+                    $('#quick_add .variant-picker-label-value').first().text($('#quick_add input[name="color"]:checked').next('label').data('value') || 'Orange');
+                    $('#quick_add .variant-picker-label-value').last().text($('#quick_add input[name="size"]:checked').next('label').data('value') || 'S');
+                }
+            });
+
+            // Handle quantity changes in quick add modal
+            $('#quick_add .btn-quantity').off('click').on('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                var input = $(this).siblings('input[name="number"]');
+                var currentValue = parseInt(input.val()) || 1;
+                var maxStock = parseInt(input.attr('max')) || 999;
+                
+                if ($(this).hasClass('plus-btn')) {
+                    if (currentValue < maxStock) {
+                        input.val(currentValue + 1);
+                    } else {
+                        showMessage('Cannot add more than ' + maxStock + ' items (stock limit)', 'error');
+                    }
+                } else if ($(this).hasClass('minus-btn') && currentValue > 1) {
+                    input.val(currentValue - 1);
+                }
+                
+                updateQuickAddPrice();
+                return false;
+            });
+
+            // Handle add to cart button click in quick add modal
+            $('#quick-add-to-cart').on('click', function(e) {
+                e.preventDefault();
+                
+                var productId = $('#quick-add-product-id').val();
+                var quantity = parseInt($('#quick_add input[name="number"]').val()) || 1;
+                var size = $('#quick_add input[name="size"]:checked').next('label').data('value') || 'S';
+                var color = $('#quick_add input[name="color"]:checked').next('label').data('value') || 'Orange';
+
+                if (!productId) {
+                    alert('Product information not available');
+                    return;
+                }
+
+                // Add loading state
+                $(this).addClass('loading');
+                $(this).find('span').first().text('Adding...');
+
+                $.ajax({
+                    url: '{{ route("cart.add") }}',
+                    method: 'POST',
+                    data: {
+                        product_id: productId,
+                        quantity: quantity,
+                        size: size,
+                        color: color
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            // Update cart count
+                            updateCartCount(response.cart_count);
+                            
+                            // Show success message
+                            showMessage('Item added to cart successfully!', 'success');
+                            
+                            // Close modal
+                            $('#quick_add').modal('hide');
+                            
+                            // Reload cart display
+                            loadCartItems();
+                        }
+                    },
+                    error: function(xhr) {
+                        if (xhr.status === 401 && xhr.responseJSON.login_required) {
+                            // Close quick add modal and show login modal
+                            $('#quick_add').modal('hide');
+                            setTimeout(function() {
+                                $('#login').modal('show');
+                            }, 300);
+                        } else {
+                            var errorResponse = xhr.responseJSON;
+                            showMessage(errorResponse.error || 'Error adding item to cart', 'error');
+                            
+                            // If stock limit error, update the max quantity
+                            if (errorResponse.max_quantity) {
+                                $('#quick_add input[name="number"]').attr('max', errorResponse.max_quantity);
+                                $('#quick_add input[name="number"]').val(Math.min($('#quick_add input[name="number"]').val(), errorResponse.max_quantity));
+                            }
+                        }
+                    },
+                    complete: function() {
+                        // Remove loading state
+                        $('#quick-add-to-cart').removeClass('loading');
+                        $('#quick-add-to-cart').find('span').first().text('Add to cart - ');
+                    }
+                });
+            });
+
+            // Handle checkout button
+            $(document).on('click', '.checkout-btn', function(e) {
+                e.preventDefault();
+                
+                $.ajax({
+                    url: '{{ route("cart.checkout") }}',
+                    method: 'POST',
+                    success: function(response) {
+                        if (response.success) {
+                            showMessage('Order placed successfully! Order ID: ' + response.order_id, 'success');
+                            
+                            // Clear cart display
+                            $('.tf-mini-cart-items').empty();
+                            updateCartCount(0);
+                            $('.tf-totals-total-value').text('$0.00 USD');
+                            
+                            // Close cart modal
+                            $('#shoppingCart').modal('hide');
+                        }
+                    },
+                    error: function(xhr) {
+                        showMessage(xhr.responseJSON.error || 'Error processing checkout', 'error');
+                    }
+                });
+            });
+
+            // Handle remove from cart
+            $(document).on('click', '.remove-cart-item', function(e) {
+                e.preventDefault();
+                var cartKey = $(this).data('cart-key');
+                
+                $.ajax({
+                    url: '{{ route("cart.remove") }}',
+                    method: 'DELETE',
+                    data: { cart_key: cartKey },
+                    success: function(response) {
+                        if (response.success) {
+                            loadCartItems();
+                            updateCartCount(response.cart_count);
+                            showMessage('Item removed from cart', 'success');
+                        }
+                    },
+                    error: function(xhr) {
+                        showMessage('Error removing item', 'error');
+                    }
+                });
+            });
+
+            // Handle quantity update in cart (input change)
+            $(document).on('change', '.cart-quantity-input', function() {
+                var cartKey = $(this).data('cart-key');
+                var quantity = parseInt($(this).val());
+                
+                if (quantity < 1) {
+                    $(this).val(1);
+                    quantity = 1;
+                }
+                
+                updateCartQuantity(cartKey, quantity, $(this));
+            });
+
+            // Handle cart quantity buttons (plus/minus) - specifically for cart items
+            $(document).on('click', '.cart-quantity-btn', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                var cartKey = $(this).data('cart-key');
+                var action = $(this).data('action');
+                var input = $(this).parent().find('.cart-quantity-input');
+                var currentValue = parseInt(input.val()) || 1;
+                var newValue = currentValue;
+                
+                console.log('Cart quantity button clicked:', action, 'Current:', currentValue);
+                
+                if (action === 'plus') {
+                    newValue = currentValue + 1;
+                    console.log('Increasing to:', newValue);
+                } else if (action === 'minus' && currentValue > 1) {
+                    newValue = currentValue - 1;
+                    console.log('Decreasing to:', newValue);
+                }
+                
+                if (newValue !== currentValue && newValue >= 1) {
+                    console.log('Updating cart quantity to:', newValue);
+                    input.val(newValue);
+                    updateCartQuantity(cartKey, newValue, input);
+                } else {
+                    console.log('No change needed');
+                }
+                
+                return false;
+            });
+
+            function updateCartQuantity(cartKey, quantity, inputElement) {
+                // Show loading state
+                inputElement.prop('disabled', true);
+                
+                $.ajax({
+                    url: '{{ route("cart.update") }}',
+                    method: 'PUT',
+                    data: { 
+                        cart_key: cartKey,
+                        quantity: quantity 
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            loadCartItems();
+                            updateCartCount(response.cart_count);
+                        } else {
+                            showMessage('Failed to update quantity', 'error');
+                            inputElement.prop('disabled', false);
+                        }
+                    },
+                    error: function(xhr) {
+                        var errorResponse = xhr.responseJSON || {};
+                        var errorMessage = errorResponse.error || 'Error updating quantity';
+                        
+                        showMessage(errorMessage, 'error');
+                        
+                        // Reset input to previous valid value if stock limit exceeded
+                        if (errorResponse.max_quantity) {
+                            inputElement.val(errorResponse.max_quantity);
+                            showMessage('Maximum available quantity: ' + errorResponse.max_quantity, 'warning');
+                        }
+                        
+                        inputElement.prop('disabled', false);
+                    },
+                    complete: function() {
+                        // Re-enable input after a short delay
+                        setTimeout(function() {
+                            inputElement.prop('disabled', false);
+                        }, 100);
+                    }
+                });
+            }
+
+            // Load cart items when cart modal is opened
+            $('#shoppingCart').on('show.bs.modal', function() {
+                loadCartItems();
+            });
+
+            // Prevent manual entry of quantities beyond stock limit
+            $(document).on('input', '#quick_add input[name="number"]', function() {
+                var maxStock = parseInt($(this).attr('max')) || 999;
+                var currentValue = parseInt($(this).val()) || 1;
+                
+                if (currentValue > maxStock) {
+                    $(this).val(maxStock);
+                    showMessage('Maximum quantity available: ' + maxStock, 'error');
+                }
+                
+                if (currentValue < 1) {
+                    $(this).val(1);
+                }
+                
+                updateQuickAddPrice();
+            });
+
+            function loadCartCount() {
+                $.ajax({
+                    url: '{{ route("cart.get") }}',
+                    method: 'GET',
+                    success: function(response) {
+                        updateCartCount(response.cart_count);
+                    }
+                });
+            }
+
+            function loadCartItems() {
+                $.ajax({
+                    url: '{{ route("cart.get") }}',
+                    method: 'GET',
+                    success: function(response) {
+                        displayCartItems(response.cart);
+                        updateCartCount(response.cart_count);
+                        $('.tf-totals-total-value').text('$' + response.cart_total.toFixed(2) + ' USD');
+                    }
+                });
+            }
+
+            function displayCartItems(cart) {
+                var cartContainer = $('.tf-mini-cart-items');
+                cartContainer.empty();
+
+                if (Object.keys(cart).length === 0) {
+                    cartContainer.html('<p class="text-center">Your cart is empty</p>');
+                    return;
+                }
+
+                // Get product stock info for each cart item
+                var productStocks = {};
+                
+                $.each(cart, function(key, item) {
+                    // Fetch stock info for this product (in a real app, this could be included in cart data)
+                    // For now, we'll set a reasonable default and let the server validate
+                    
+                    var priceDisplay = '';
+                    if (item.discount > 0) {
+                        priceDisplay = `
+                            <div class="tf-mini-cart-price">
+                                <span class="price-sale">$${(item.price * item.quantity).toFixed(2)}</span>
+                                <span class="compare-at-price" style="text-decoration: line-through; color: #999; font-size: 0.9em;">$${(item.original_price * item.quantity).toFixed(2)}</span>
+                                <small style="color: #ff6b6b;">${item.discount}% OFF</small>
+                            </div>
+                        `;
+                    } else {
+                        priceDisplay = `<div class="tf-mini-cart-price">$${(item.price * item.quantity).toFixed(2)}</div>`;
+                    }
+
+                    var cartItemHtml = `
+                        <div class="tf-mini-cart-item">
+                            <div class="tf-mini-cart-image">
+                                <img src="${item.image ? '{{ asset("storage/") }}/' + item.image : '{{ asset("clientFront/assets/images/products/orange-1.jpg") }}'}" alt="${item.name}">
+                            </div>
+                            <div class="tf-mini-cart-info">
+                                <div class="tf-mini-cart-product-name">${item.name}</div>
+                                <div class="tf-mini-cart-variant">
+                                    <span>Size: ${item.size}</span> / <span>Color: ${item.color}</span>
+                                </div>
+                                <div class="tf-mini-cart-btns">
+                                    ${priceDisplay}
+                                    <div class="tf-quantity-controls" style="display: flex; align-items: center; justify-content: space-between; margin-top: 8px; padding: 6px; background: #f8f9fa; border-radius: 4px; border: 1px solid #e9ecef; width: 100%;">
+                                        <span style="font-size: 12px; color: #666; font-weight: 500; flex-shrink: 0;">Qty:</span>
+                                        <div style="display: flex; align-items: center; gap: 4px;">
+                                            <button class="cart-quantity-btn" data-cart-key="${key}" data-action="minus" style="background: #fff; border: 1px solid #ccc; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; border-radius: 3px; cursor: pointer; font-size: 14px; font-weight: bold; color: #333; flex-shrink: 0; transition: all 0.2s;" onmouseover="this.style.background='#f0f0f0';" onmouseout="this.style.background='#fff';">−</button>
+                                            <input type="number" class="cart-quantity-input" data-cart-key="${key}" value="${item.quantity}" min="1" max="999" style="width: 40px; height: 26px; text-align: center; border: 1px solid #ccc; border-radius: 3px; padding: 2px; font-weight: 600; font-size: 14px; outline: none; background: #fff; flex-shrink: 0;" onfocus="this.style.borderColor='#007bff';" onblur="this.style.borderColor='#ccc';">
+                                            <button class="cart-quantity-btn" data-cart-key="${key}" data-action="plus" style="background: #fff; border: 1px solid #ccc; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; border-radius: 3px; cursor: pointer; font-size: 14px; font-weight: bold; color: #333; flex-shrink: 0; transition: all 0.2s;" onmouseover="this.style.background='#f0f0f0';" onmouseout="this.style.background='#fff';">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tf-mini-cart-remove">
+                                <a href="#" class="remove-cart-item" data-cart-key="${key}">
+                                    <i class="icon-close"></i>
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                    cartContainer.append(cartItemHtml);
+                });
+            }
+
+            function updateCartCount(count) {
+                $('.count-box, .toolbar-count').text(count);
+            }
+
+            function updateQuickAddPrice() {
+                var quantity = parseInt($('#quick_add input[name="number"]').val()) || 1;
+                var price = 18.00;
+                
+                // Check if product has discount
+                if ($('#quick_add .price-on-sale').is(':visible')) {
+                    // Use discounted price
+                    var priceText = $('#quick_add .price-on-sale').text();
+                    price = parseFloat(priceText.replace('$', '')) || 18.00;
+                } else {
+                    // Use regular price
+                    var priceText = $('#quick_add .price').text();
+                    price = parseFloat(priceText.replace('$', '')) || 18.00;
+                }
+                
+                $('.tf-qty-price').text('$' + (price * quantity).toFixed(2));
+            }
+
+            function showMessage(message, type) {
+                var alertClass = 'alert-danger';
+                if (type === 'success') alertClass = 'alert-success';
+                if (type === 'warning') alertClass = 'alert-warning';
+                
+                var alertHtml = `
+                    <div class="alert ${alertClass} alert-dismissible fade show position-fixed" 
+                         style="top: 20px; right: 20px; z-index: 9999; min-width: 300px;">
+                        ${message}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    </div>
+                `;
+                $('body').append(alertHtml);
+                
+                // Auto dismiss after 3 seconds
+                setTimeout(function() {
+                    $('.alert').alert('close');
+                }, 3000);
+            }
+        });
+    </script>
 </body>
 
 
