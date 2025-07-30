@@ -79,6 +79,7 @@
                                 <tr>
                                     <th>Order ID</th>
                                     <th>Customer</th>
+                                    <th>Product IDs</th>
                                     <th>Total Price</th>
                                     <th>Status</th>
                                     <th>Date</th>
@@ -89,7 +90,16 @@
                                 @forelse($orders as $order)
                                 <tr>
                                     <td>#{{ $order->id }}</td>
-                                    <td>{{ $order->user->name }}</td>
+                                    <td>{{ $order->user->name }}</td>                                  
+                                    <td>
+                                        @if($order->items->count() > 0)
+                                            @foreach($order->items as $item)
+                                                <span class="badge bg-secondary me-1">#{{ $item->product_id }}</span>
+                                            @endforeach
+                                        @else
+                                            <span class="text-muted">No products</span>
+                                        @endif
+                                    </td>
                                     <td>${{ number_format($order->total_price, 2) }}</td>
                                     <td>
                                         <span class="badge bg-{{ $order->status === 'pending' ? 'warning' : ($order->status === 'completed' ? 'success' : 'danger') }}">
@@ -112,7 +122,7 @@
                                 </tr>
                                 @empty
                                 <tr>
-                                    <td colspan="6" class="text-center py-4">
+                                    <td colspan="7" class="text-center py-4">
                                         <div class="text-muted">No orders found</div>
                                     </td>
                                 </tr>
